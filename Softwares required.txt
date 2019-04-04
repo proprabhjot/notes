@@ -1,0 +1,7 @@
+ - Git, GitHub Account
+ - Visual studio code
+ - NodeJs
+ - MongoDB
+ - Robo 3T - https://robomongo.org/
+ - Postman - https://www.getpostman.com/apps
+ - nodemon - npm install -g nodemon

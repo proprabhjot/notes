@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>CSS</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            * {
+                color: #d3d3d3;
+            }
+
+            h1 { /* Specificity 1 */
+                color: red !important;
+            }
+
+            h1.test { /* Specificity 11 */
+                color: green;
+            }
+        </style>
+    </head>
+    <body>
+        <h3><a href="./index.html">&lt;&lt; Back To Home</a></h3>
+        
+        <h1 class="test">Test</h1>
+    </body>
+</html>
