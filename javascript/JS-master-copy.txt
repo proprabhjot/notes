@@ -14,13 +14,6 @@ Every statement ends with semicolon;
 
 Spaces and tabs are ignored. 
  
-+ - for concatenation. 
- 
-alert("test \n test"); // To break line 
-
-var str = "test \
-test"; // Escaping new line
-
 \\ - for singe line commenting 
  
 \* - *\ for multi line commenting 
@@ -147,6 +140,9 @@ var str = " double " quote "; // Get an error
 
 var str = " double \" quote ";
 
+var str = "test \
+test"; // Escaping new line
+
 str.length
 
 str.charAt(0)
@@ -209,11 +205,7 @@ Suffix: a = 2; console.log(a); console.log(a++); console.log(a);
  
 Prefix: a = 2; console.log(a); console.log(++a); 
  
-Logical: AND ( && ), OR ( || ), NOT ( ! ) 
- 
-OR  - returns first truthy value or last falsy value. 
- 
-AND - returns last truthy value or first falsy value. 
+Logical: AND ( && ), OR ( || ), NOT ( ! )
  
 Type Conversions:
 =================
@@ -297,7 +289,7 @@ switch(x) {
  
 Ternary:
 ======== 
-result = condition ? value_if_true : value_if_false 
+result = condition ? value_if_true : value_if_false;
  
 Loops:
 ====== 
@@ -367,11 +359,6 @@ Callback function
 -----------------
 We can pass one function to another function as parameter: 
 
-var test = greet;
-test('John');
-
-Pass one function as argument to another function:
-
 function callOtherFunction(func){
 	func("John");
 }
@@ -413,7 +400,6 @@ function User() {
 }
 var user = new User();
 
-
 instanceof: for checking type of custom objects
 ===========
 var test = new String("abc");
@@ -426,7 +412,7 @@ function Animal(name) {
   this.name = name
 }
 var animal = new Animal("cow");
-alert( animal instanceof Animal ) // true
+animal instanceof Animal  // true
 
 Arrays:
 =======
@@ -477,7 +463,6 @@ delete arr[1]
 // now arr = ["Go", undefined, "home"]
 console.log(arr[1]) // undefined
 
-
 splice:
 -------
 arr.splice(index, deleteCount, [elem1, ..., elemN])
@@ -493,7 +478,6 @@ var arr = ["Go", "to", "home", "now"];
 // remove first 3 elements and add two
 arr.splice(0, 3, "Come", "here") 
 console.log( arr ) // ["Come", "here", "now"]
-
 
 insert elements, just set deleteCount to 0
 var arr = ["Go", "to", "home"];
