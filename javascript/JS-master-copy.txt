@@ -618,7 +618,7 @@ var peter = new User("Peter");
 john.sayHi()
 peter.sayHi()
 
-The value of this is dynamic in JavaScript. It is determined when function is called, not when it is declared.
+The value of this is dynamic. It is determined when function is called, not when it is declared.
 
 In an object method, this will become current object.
 Example1:
@@ -747,54 +747,13 @@ var veryComplexObj = new veryComplexCalc();
 
 Observe veryComplexObj.__proto__, it should contain 'multiplication' and 'division' methods in it. So, on veryComplexCalc we can access add, subtract, multiplication and division as well.
 
-We can put all dynamic property assignments in constructor method and we can do all fixed property assignments through prototype.  
-function Indian(first, last) {
-    this.firstName = first;
-    this.lastName = last;
-}
-Indian.prototype.nationality = "Indian";
-
-For new Indian objects, nationality will be Inherited from prototype. 
-
 JavaScript objects like new String(), new Array(), new Date() etc.. inherit all properties and methods from prototype.
-
-Object.create:
---------------
-Create an object from existing object as prototype.
-var animal = { eats: true };
-rabbit = Object.create(animal);
-rabbit.jumps = true;
-
-rabbit.__proto__ contains eats property.
-
-Object.getPrototypeOf:
-----------------------
-Object.getPrototypeOf(rabbit) //{eats: true}
-
-hasOwnProperty:
-===============
-Using hasOwnProperty, we can check the specified property is own property or inherited.
-function Rabbit(name) {
-  this.name = name
-}
-
-Rabbit.prototype = { eats: true }
-
-var rabbit = new Rabbit('John')
-
-console.log( rabbit.hasOwnProperty('eats') ) // false, in prototype
-
-console.log( rabbit.hasOwnProperty('name') ) // true, in object
-
-constructor:
-------------
-An object has a build-in property named constructor. It is meant to reference the function which made the object, but it fails to do it sometimes.
 
 Closure:
 ========
 A closure is an inner function that has access to the outer function’s variables, properties and scope.
 
-function beginCounter() {
+function getCounter() {
   var count = 0;
   function counter() {
     count += 1;
@@ -803,11 +762,11 @@ function beginCounter() {
   return counter;
 }
 
-var countFunc = beginCounter();
+var count = getCounter();
 
-countFunc();
-countFunc();
-countFunc();
+count();
+count();
+count();
 
 Here counter() function is closure.
 
@@ -841,13 +800,6 @@ DOM:
 ====
 Document Object Model (DOM)
  allow to access contents of the page, modify elements etc
-
-Browser Object Model (BOM)
- BOM is a pack of objects that allow to control the browser
- // navigator object, notifications, aceess microphone, camera etc
- 
-JavaScript objects and functions
-	gives us access to DOM, BOM and provides objects and functions of its own
 	
 The DOM represents a document as a tree. The tree is made up of parent-child relationships, a parent can have one or many children nodes.
 
@@ -860,18 +812,7 @@ document.body.childNodes
 document.body.firstChild
 document.body.lastChild
 
-
-properties:
-document.body.nodeName
-
-document.body.nodeType
-ELEMENT_NODE       = 1;
-TEXT_NODE          = 3;
-COMMENT_NODE       = 8;
-
-
-document.body.innerHTML - works for element nodes only
-
+document.body.innerHTML - works for element nodes
 
 document.getElementById:
 ------------------------
@@ -923,7 +864,6 @@ getElementsByName
 ------------------
 var elements = document.getElementsByName('age')
 
-
 document.querySelector, querySelectorAll:
 -----------------------------------------
 The methods querySelector and querySelectorAll allow to select elements by CSS3 query.
@@ -970,6 +910,11 @@ Here cx, cy, r are just attributes. Those attributes don't have equivalent prope
 
 Events:
 =======
+We can bind events to the elements in 3 ways,
+1. With element attribute
+2. With DOM-object property
+3. Using addEventListener method
+
 Handle events with element attribute:
 -------------------------------------
 <input id="b1" value="Click me" onclick="alert('Thanks!');" type="button"/>
@@ -981,7 +926,6 @@ Inside an event handler, this references the current element.
 'event' contains the entire information about event.
 
 <button onclick="console.log(event)">Click me to see me</button>
-
 
 Handle events with DOM-object property:
 ---------------------------------------
@@ -1127,7 +1071,6 @@ localStorage.setItem('user', JSON.stringify({name: 'John', age: 25}));
 var user = localStorage.getItem('user'); // "{name: 'John', age: 25}"
 user = JSON.parse(user); // {name: 'John', age: 25}
 
-
 Exceptions:
 ===========
 new Error([message[, fileName[, lineNumber]]])
@@ -1139,7 +1082,6 @@ try {
 } catch (e) {
   console.log(e.name + ': ' + e.message);
 }
-
 
 function myFunc(){
     var a = 100;
@@ -1205,7 +1147,8 @@ JavaScript Libraries:
 - moment
 - lodash / underscore js
 - jquery
-- Practical examples are fileupload, generate excel, generate pdf etc..
+
+We can find libraries for the tasks like fileupload, generate excel, generate pdf etc..
 
 Browser Compatibility:
 ----------------------
