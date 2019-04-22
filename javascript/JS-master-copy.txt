@@ -191,7 +191,7 @@ slice(start [, end])
 same as substring. Difference is handling the negative and overflow values.
 
 "testme".substring(-2) //testme  negative values becomes 0
-"testme".slice(-4)	//stme		count from the end of the string. backward counting starts from -1. 'm' at -4. So, start at 's' and take remaining all.
+"testme".slice(-4)	//stme		count from the end of the string. backward counting starts from -1. 's' at -4. So, start at 's' and take remaining all.
 
 "testme".slice(1, -1) //estm Start at 1, end at -1 and exclude last char.
  
