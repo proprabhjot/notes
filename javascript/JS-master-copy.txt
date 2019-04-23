@@ -323,7 +323,9 @@ var i=0;
 while(true) { 
   i += 1;
   console.log(i); 
-  if (i>5) break; 
+  if (i>5) {
+    break; 
+  }
   console.log("test"); 
 } 
  
@@ -357,7 +359,7 @@ Example: examples/scoping.js
 
 Callback function
 -----------------
-We can pass one function to another function as parameter: 
+We can pass one function as parameter to another function, 
 
 function callOtherFunction(func){
 	func("John");
@@ -375,10 +377,9 @@ callOtherFunction(function(name) {
 
 Self calling functions / Immediately invoked functions:
 -------------------------------------------------------
-
 (function() {
   
-	var a, b;
+	var a = 5, b=10;
 	
 })()
 
@@ -407,12 +408,6 @@ test instanceof String // true
 
 var test2 = "tst";
 test2 instanceof String // false
-
-function Animal(name) { 
-  this.name = name
-}
-var animal = new Animal("cow");
-animal instanceof Animal  // true
 
 Arrays:
 =======

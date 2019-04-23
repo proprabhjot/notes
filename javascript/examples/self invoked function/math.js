@@ -17,3 +17,4 @@ var math = {};
     math.subtract = subtract;
 })()
 
+console.log(math);
