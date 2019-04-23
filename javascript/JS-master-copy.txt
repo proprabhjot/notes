@@ -1006,7 +1006,7 @@ event.preventDefault();
 // Capturing and bubling events.
 An event contains 3 phases.
 1. Capturing
-2. Tarrgeting
+2. Targeting
 3. Bubling
 
 Capturing: The event is first captured by the outermost element and propagated to the inner elements.
@@ -1035,6 +1035,36 @@ function loadDoc() {
             document.getElementById("demo").innerHTML = this.responseText;
         }
     };
+}
+
+Timing methods
+==============
+Ex: timing.html
+
+setTimeout, clearTimeOut
+------------------------
+setTimeout function is used to execute a function or some statements after some specified time.
+
+var timeOutRef = setTimeout(function() {
+    document.getElementById('demo1').innerText = "Text changed";
+}, 3000);
+
+function stop() {
+    clearTimeout(timeOutRef);
+}
+
+setInterval, clearInterval
+--------------------------
+setInterval function is used to execute a function or some statements repeatedly on specified time interval.
+
+var i = 0;
+var intervalRef = setInterval(function(){
+    i++;
+    document.getElementById('count').innerText = i;
+}, 1000);
+
+function stopCounting() {
+    clearInterval(intervalRef);
 }
 
 localStorage
@@ -1070,7 +1100,7 @@ Exceptions:
 ===========
 new Error([message[, fileName[, lineNumber]]])
 
-The Error constructor creates an error object. Instances of Error objects are thrown when runtime errors occur. The Error object can also be used as a base object for user-defined exceptions.
+The Error constructor creates an error object. Instances of Error objects are thrown when runtime errors occur.
 
 try {
   throw new Error('Whoops!');
@@ -1078,35 +1108,22 @@ try {
   console.log(e.name + ': ' + e.message);
 }
 
-function myFunc(){
-    var a = 100;
-    
-    try {
-      alert("Value of variable a is : " + a );
+// Example function
+function myFunc(a, b){
+  try{
+    if ( b == 0 ){
+      throw( "Divide by zero error." ); 
+    } else {
+      var c = a / b;
     }
-    
-    catch ( e ) {
-      alert("Error: " + e.description );
-    }
-    
-    finally {
-      alert("Finally block will always execute!" );
-    }
+  }catch ( e ) {
+    alert("Error: " + e );
+  } finally {
+    alert("Finally block will always execute!" );
+  }
 }
 
-var a=10, b=0;
-try{
-  if ( b == 0 ){
-      throw( "Divide by zero error." ); 
-  }
-  
-  else
-  {
-      var c = a / b;
-  }
-}catch ( e ) {
-  alert("Error: " + e );
-}
+myFunc(10, 0);
 
 Regular Expressions
 ===================
@@ -1116,26 +1133,37 @@ var patt = /Hello/i
 
 /Hello/i - is a regular expression. Note: It's not a string. No quotes around it.
 Hello    - is pattern(used to perform search)
-i       - is a modifier(modifies the search to be case-insensitive).
+i        - is a modifier(modifies the search to be case-insensitive).
+g        - global search. Don't stop at first match.
 
 test() method
 -------------
 test() method is used to search pattern in given string. If string matched with pattern, test() will return true.
 
 var str = "Hello world!";
+var pattern = /Hello/;
+var result = pattern.test(str); // True
 
-// Look for "Hello"
-var patt = /Hello/g;
-var result = patt.test(str); // True
+var pattern = /hello/; 
+var result = pattern.test(str); // False. Case sensitive search
 
-// Look for "javascript"
-patt2 = /javascript/g;
-result2 = patt2.test(str); // False
+var pattern = /hello/i;
+var result = pattern.test(str); // True. Case insensitive search
 
 var emailPattern = /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/g;
 email = 'test@gmail.com';
 emailResult = emailPattern.test(email);  // True
 emailResult = emailPattern.test('test@');  // False
+
+str.match() method
+------------------
+str.match() is a method available on strings, to check a pattern against a string.
+
+var str = "Widget with id Widget";
+str.match(/Widget/); // Search stops after first occurence
+str.match(/Widget/g); // Returns an array with 2 elements
+str.match(/widget/); // Returns null. Case sensitive search
+str.match(/widget/ig); // Returns Returns an array with 2 elements. Case in-sensitive global search
 
 JavaScript Libraries:
 =====================
@@ -1145,77 +1173,37 @@ JavaScript Libraries:
 
 We can find libraries for the tasks like fileupload, generate excel, generate pdf etc..
 
+NPM
+===
+npm init
+
+npm install jquery
+npm i jquery
+npm install jquery --save
+npm install jasmine --save-dev
+
+npm install -g @angular/cli - Global installation
+
+Specifying version in package.json
+----------------------------------
+"jquery": "*" - any version
+
+"jquery": "latest" - latest version
+
+"jquery": "1.x"
+  or:
+"jquery": "^1.0.0" ----> install the latest minor version. Upto 1.9.9 but not 2.0.0
+
+"jquery": "~1.11"  -----> install the latest patch version. Upto 1.11.9 but not 1.12.0
+
 Browser Compatibility:
 ----------------------
 - We have many browsers. All the browsers don't behave in same way. Some features are not supported by few browsers.
-- https://quirksmode.org/
+
+https://caniuse.com is to verify the browser compatibility of html, css and javascript features.
 
 Sites to Refer:
 ===============
 https://www.w3schools.com/
 
 http://javascript.info/
-
-
-NPM
-===
-npm install -g jshint
-
-npm install jshint
-
-npm install -g jshint 
-
-npm install --save-dev branch@^2.0.4
-
-"angular": "~1.2"  -----> patch-level changes till 1.2.9 but not 1.3.0
-
-Below-> Latest version in 1.1.2 or 1.9 etc...
-"angular": "1.x"
-  or:
-"angular": "^1.0.0"
-
-"angular": "*" - any version
-
-"angular": "latest" - latest version
-
-Singleton:
-==========
-The Singleton Pattern limits the number of instances of a particular object to just one. This single instance is called the singleton.
-
-The Singleton object is implemented as an immediate anonymous function.
-
-The getInstance method is Singleton's gatekeeper. It returns the one and only instance of the object while maintaining a private reference to it which is not accessible to the outside world.
-
-var Singleton = (function () {
-    var instance;
- 
-    function createInstance() {
-        var object = new Object("I am the instance");
-        return object;
-    }
- 
-    return {
-        getInstance: function () {
-            if (!instance) {
-                instance = createInstance();
-            }
-            return instance;
-        }
-    };
-})();
- 
-function run() {
- 
-    var instance1 = Singleton.getInstance();
-    var instance2 = Singleton.getInstance();
- 
-    alert("Same instance? " + (instance1 === instance2));  
-}
-
-The getInstance method demonstates another design pattern called Lazy Load. Lazy Load checks if an instance has already been created; if not, it creates one and stores it for future reference. All subsequent calls will receive the stored instance. Lazy loading is a CPU and memory saving technique by creating objects only when absolutely necessary.
-
-
-
-setTimeout, clearTimeOut
-
-setInterval, clearInterval
