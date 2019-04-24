@@ -630,11 +630,11 @@ var john = {
   firstName: "John" 
 }
 
-function func() { 
+function print() { 
   console.log(this.firstName + ": hi!")
 }
 
-john.sayHi = func;
+john.sayHi = print;
 
 john.sayHi()  // this = john
 
@@ -656,44 +656,48 @@ var john = {
   firstName: "John" 
 }
 
-function func() { 
+function print() { 
   console.log( this.firstName )
 }
 
-func() // undefined 
+print() // undefined 
 
-func.call(john)  // "John"
+print.call(john)  // "John"
 
 var john = { 
   firstName: "John",
-  surname: "Smith"
+  lastName: "Smith"
 }
 
-function func(a, b) { 
-  console.log( this[a] + ' ' + this[b] )
+function print(a, b) { 
+  console.log( this.firstName + ' ' + this.lastName )
+  return a + b;
 }
 
-func.call(john, 'firstName', 'surname')  // "John Smith"
+print.call(john, 2, 3)  // "John Smith"
 
-The func.apply is same as func.call, but it accepts an array of arguments instead of list.
+The print.apply is same as print.call, but it accepts an array of arguments instead of list.
 
 The following two lines are same:
-func.call(john, 'firstName', 'surname')
+print.call(john, 2, 3)
  
-func.apply(john, ['firstName', 'surname'])
+print.apply(john, [2, 3])
 
 Using call and apply methods we can call the function. Using bind() method we can create new function with the given context. bind() method returns the new function with supplied context.
 
-var printName = func.bind(john);
-printName('firstName', 'surname'); // John Smith
+// Not binding any context and assigning print to printName variable
+var printName = print; 
+
+// Binding john to print and assigning print to printName variable
+var printName = print.bind(john); 
+printName(2, 3); // John Smith
 
 Also, we can pass parameters in bind method.
-var printName = func.bind(john, 'firstName', 'surname');
+var printName = print.bind(john, 2, 3);
 printName(); // John Smith
 
 OOPS:
 =====
-
 Prototypal inheritance:
 -----------------------
 In other languages one class inherit other class. In javascript we use 'prototype' property for inheritance.
