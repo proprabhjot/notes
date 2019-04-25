@@ -834,9 +834,10 @@ var elements = document.getElementsByTagName('input')
 
 document.getElementsByClassName
 -------------------------------
-<div class="a b c">Yep</div>
+<div class="abc def test">some text1</div>
+<div class="abc">some text2</div>
 <script>
-console.log( document.getElementsByClassName('a')[0].innerHTML )
+console.log( document.getElementsByClassName('abc')[0].innerHTML )
 </script>
 
 getElementsByName
