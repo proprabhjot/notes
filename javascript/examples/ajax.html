@@ -10,9 +10,6 @@
     <pre>
         <p id="demo"></p>
     </pre>
-    <p>npm install -g json-server</p>
-    <p>Run below command to start the http server:</p>
-    <p>json-server db.json</p>
 
     <script>
         function loadDoc() {
@@ -20,7 +17,8 @@
             xhttp.open("GET", "http://localhost:3000/todos");
             xhttp.send();
             xhttp.onreadystatechange = function() {
-                // console.log(this.readyState);
+                console.log(this.readyState);
+                console.log(this.status);
                 if (this.readyState == 4 && this.status == 200) {
                     console.log("Call completed");
                     document.getElementById("demo").innerHTML = this.responseText;
