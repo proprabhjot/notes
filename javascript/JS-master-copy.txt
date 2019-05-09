@@ -255,7 +255,6 @@ if (userId > 1) {
  
 Switch:
 ====== 
- 
 switch(x) { 
   case 'value1':  // if (x === 'value1') 
     ...
