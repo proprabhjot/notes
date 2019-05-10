@@ -334,23 +334,27 @@ greet('John');
 If a function don't return anything, by default "undefined" will be returned.
 
 variables declared inside function are local to that function.
-Example: examples/scoping.js
+Example: examples/scoping.html
 
 Callback function
 -----------------
 We can pass one function as parameter to another function, 
 
-function callOtherFunction(func){
-	func("John");
+function greet(name) { 
+  console.log("Hi, "+name) 
+} 
+
+function callUser(callback){
+	callback("John");
 }
 
-callOtherFunction(greet);
+callUser(greet);
 
 Here greet is a call back function.
 
 We can pass functions through variables or as arguments to other functions.
 
-callOtherFunction(function(name) { 
+callUser(function(name) { 
   console.log("Hi, "+name) 
 });
 
@@ -359,6 +363,7 @@ Self calling functions / Immediately invoked functions:
 (function() {
   
 	var a = 5, b=10;
+  console.log(a, b);
 	
 })()
 
@@ -382,6 +387,8 @@ var user = new User();
 
 instanceof: for checking type of custom objects
 ===========
+user instanceof User
+
 var test = new String("abc");
 test instanceof String // true
 
@@ -1020,6 +1027,8 @@ function loadDoc() {
         }
     };
 }
+
+Ex: ajax.html
 
 Timing methods
 ==============
