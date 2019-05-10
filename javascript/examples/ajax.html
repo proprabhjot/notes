@@ -6,13 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">   
 </head>
 <body>
-    <button onclick="loadDoc();">Load Data</button>
+    <button onclick="loadData();">Load Data</button>
     <pre>
-        <p id="demo"></p>
+        <p id="demo">Placeholder</p>
     </pre>
 
     <script>
-        function loadDoc() {
+        function sendServerRequest(success, failure) {
             var xhttp = new XMLHttpRequest();
             xhttp.open("GET", "http://localhost:3000/todos");
             xhttp.send();
@@ -21,9 +21,19 @@
                 console.log(this.status);
                 if (this.readyState == 4 && this.status == 200) {
                     console.log("Call completed");
-                    document.getElementById("demo").innerHTML = this.responseText;
+                    success(this);
+                } else {
+                    failure();
                 }
             };
+        }
+
+        function loadData(){
+            sendServerRequest(function(request) {
+                document.getElementById("demo").innerHTML = request.responseText;
+            }, function() {
+                document.getElementById("demo").innerHTML = 'Failed to load data';
+            });
         }
     </script>
 </body>
