@@ -55,7 +55,7 @@ typeof function(){} // "function". There is no function data type. It comes unde
 
 typeof {} // 'object'
 typeof [] // 'object'
-typeof new Date // 'object'
+typeof new Date() // 'object'
 
 typeof "test" // string
 typeof new String("test") // object
@@ -133,7 +133,7 @@ str.toLowerCase()
 
 indexOf(): It is used to search substring in a string. Returns position of first occurence of substring.
 
-var str = "Widget with id Widget"
+var str = "Widget with id Widget";
 str.indexOf("Widget")  // 0
 str.indexOf("id")  // 1
 str.indexOf("test")  // -1 if it can't find the substring
@@ -223,7 +223,7 @@ str = 'test';
 
 JSON <=> String:
 ----------------
-var obj = JSON.parse('{ "name":"John", "age":30, "city":"New York"}');
+var obj = JSON.parse('{"name":"John", "age":30, "city":"New York"}');
 
 var obj = { "name":"John", "age":30, "city":"New York"};
 var myJSON = JSON.stringify(obj);
@@ -268,7 +268,7 @@ switch(x) {
  
 Ternary:
 ======== 
-result = condition ? value_if_true : value_if_false;
+var result = condition ? value_if_true : value_if_false;
  
 Loops:
 ====== 
