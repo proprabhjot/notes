@@ -352,11 +352,13 @@ callUser(greet);
 
 Here greet is a call back function.
 
-We can pass functions through variables or as arguments to other functions.
+Instead of passing function using it's name, we can define the function while passing it.
 
 callUser(function(name) { 
   console.log("Hi, "+name) 
 });
+
+Ex: ajax folder
 
 Self calling functions / Immediately invoked functions:
 -------------------------------------------------------
@@ -534,6 +536,10 @@ user.name = 'John'
 delete user.name
 
 We can also use [] to access properties of object.
+user['name'] // John
+
+var key = 'name';
+user[key] // John
 
 var box = {
 	width: 200,
@@ -583,13 +589,17 @@ if(Object.keys(box).length) {
 
 this:
 =====
-Creating custom object:
+> In a regular function, this will become window object
+function test(){
+  console.log(this); // this = window object
+}
 
+> Creating custom object:
 function User(name) {
   this.name = name;
  
   this.sayHi = function() {
-    console.log(" I am "  + this.name)
+    console.log("I am "  + this.name)
   };
 }
 
@@ -601,7 +611,7 @@ peter.sayHi()
 
 The value of this is dynamic. It is determined when function is called, not when it is declared.
 
-In an object method, this will become current object.
+> In an object method, this will become current object.
 Example1:
 var obj = {
   name: 'John',
@@ -623,11 +633,6 @@ function print() {
 john.sayHi = print;
 
 john.sayHi()  // this = john
-
-In a function, this will become window object
-function test(){
-  console.log(this); // this = window object
-}  
 
 call, apply and bind methods
 ----------------------------
@@ -1021,14 +1026,23 @@ function loadDoc() {
     xhttp.open("GET", "http://localhost:3000/todos", true);
     xhttp.send();
     xhttp.onreadystatechange = function() {
-        console.log(this.readyState);
         if (this.readyState == 4 && this.status == 200) {
             document.getElementById("demo").innerHTML = this.responseText;
         }
     };
 }
 
-Ex: ajax.html
+The onreadystatechange property specifies a function to be executed every time the status of the XMLHttpRequest object changes.
+When readyState property is 4 and the status property is 200, the response is ready.
+
+Different readyStates available are below,
+0	UNSENT - Client has been created. open() not called yet.
+1	OPENED - open() has been called.
+2	HEADERS_RECEIVED - send() has been called, and headers and status are available.
+3	LOADING	- Downloading; responseText holds partial data.
+4	DONE - The operation is complete.
+
+Ex: ajax folder
 
 Timing methods
 ==============
