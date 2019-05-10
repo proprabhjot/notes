@@ -2,7 +2,7 @@
   "todos": [
     {
       "id": 1,
-      "title": "Pay power billllllll",
+      "title": "Pay power bill",
       "isCompleted": true,
       "targetDate": "2018-5-12",
       "tags": "Urgent",
