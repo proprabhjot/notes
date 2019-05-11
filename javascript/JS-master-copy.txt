@@ -539,6 +539,7 @@ We can also use [] to access properties of object.
 user['name'] // John
 
 var key = 'name';
+user.key // undefined
 user[key] // John
 
 var box = {
@@ -583,6 +584,11 @@ Object.keys(box) returns an array with all keys of box object.
 Object.values(box) returns an array with all values of box object.
 
 To check an object is empty or not, check the length of Object.keys(box) array.
+var user = {};
+if(user) {
+	console.log('not empty');
+} // If can't evaluate it.
+
 if(Object.keys(box).length) {
   // box is not an empty object
 }
