@@ -797,7 +797,7 @@ DOM:
 Document Object Model (DOM)
  allow to access contents of the page, modify elements etc
 	
-The DOM represents a document as a tree. The tree is made up of parent-child relationships, a parent can have one or many children nodes.
+The DOM represents document as a tree. The tree is made up of parent-child relationships, a parent can have one or many children nodes.
 
 window.document is the global object for DOM. We can access it as window.document OR document.
 
@@ -808,7 +808,11 @@ document.body.childNodes
 document.body.firstChild
 document.body.lastChild
 
-document.body.innerHTML - works for element nodes
+dir - method
+------------
+dir() is a chrome console method to expand and see the list of properties available on a DOM element.
+var logo = document.getElementById('logo');
+dir(logo);
 
 document.getElementById:
 ------------------------
