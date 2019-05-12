@@ -649,7 +649,7 @@ The syntax of call:
 func.call(obj, arg1, arg2,...)
 The first argument of call becomes this, other arguments arg1, arg2... become arguments.
 
-var john = { 
+var user = { 
   firstName: "John" 
 }
 
@@ -659,9 +659,9 @@ function print() {
 
 print() // undefined 
 
-print.call(john)  // "John"
+print.call(user)  // "John"
 
-var john = { 
+var user = { 
   firstName: "John",
   lastName: "Smith"
 }
@@ -671,14 +671,14 @@ function print(a, b) {
   return a + b;
 }
 
-print.call(john, 2, 3)  // "John Smith"
+print.call(user, 2, 3)  // "John Smith"
 
 The print.apply is same as print.call, but it accepts an array of arguments instead of list.
 
 The following two lines are same:
-print.call(john, 2, 3)
+print.call(user, 2, 3)
  
-print.apply(john, [2, 3])
+print.apply(user, [2, 3])
 
 Using call and apply methods we can call the function. Using bind() method we can create new function with the given context. bind() method returns the new function with supplied context.
 
@@ -686,11 +686,11 @@ Using call and apply methods we can call the function. Using bind() method we ca
 var printName = print; 
 
 // Binding john to print and assigning print to printName variable
-var printName = print.bind(john); 
+var printName = print.bind(user); 
 printName(2, 3); // John Smith
 
 Also, we can pass parameters in bind method.
-var printName = print.bind(john, 2, 3);
+var printName = print.bind(user, 2, 3);
 printName(); // John Smith
 
 OOPS:
