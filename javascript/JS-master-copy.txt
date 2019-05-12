@@ -811,18 +811,21 @@ document.body.lastChild
 dir - method
 ------------
 dir() is a chrome console method to expand and see the list of properties available on a DOM element.
+
+<div id="logo">div for logo</div>
 var logo = document.getElementById('logo');
+console.log(logo);
+
 dir(logo);
 
 document.getElementById:
 ------------------------
-<body>
-  <div id="info">Info</div>
-  <script>
-    var div = document.getElementById('info')
-    console.log( div.innerHTML )
-  </script>
-</body>
+<div id="info">Info</div>
+<script>
+  var div = document.getElementById('info')
+  console.log( div.innerHTML )
+</script>
+
 
 getElementsByTagName
 --------------------
@@ -842,11 +845,11 @@ getElementsByTagName
       </label>
     </td>
   </tr>
-
 </table>
 
 <script>
-var elements = document.getElementsByTagName('input')
+var elements = document.getElementsByTagName('input');
+  console.log(elements);
   for(var i=0; i<elements.length; i++) {
     var input = elements[i]  
     console.log(input.value+': '+input.checked)
@@ -858,12 +861,33 @@ document.getElementsByClassName
 <div class="abc def test">some text1</div>
 <div class="abc">some text2</div>
 <script>
-console.log( document.getElementsByClassName('abc')[0].innerHTML )
+console.log( document.getElementsByClassName('abc') )
 </script>
 
 getElementsByName
 ------------------
-var elements = document.getElementsByName('age')
+<table id="myTable">
+  <tr>
+    <td>Your age:</td>
+
+    <td>
+      <label>
+        <input type="radio" name="age" value="young" checked/> under 18
+      </label>
+      <label>
+        <input type="radio" name="age" value="mature"/> from 18 to 50
+      </label>
+      <label>
+        <input type="radio" name="age" value="senior"/> older than 60
+      </label>
+    </td>
+  </tr>
+</table>
+
+<script>
+  var elements = document.getElementsByName('age');
+  console.log(elements);
+</script>
 
 document.querySelector, querySelectorAll:
 -----------------------------------------
@@ -883,6 +907,10 @@ The methods querySelector and querySelectorAll allow to select elements by CSS3 
     console.log(elements[i].innerHTML )
   }
 </script>
+
+// document.querySelector - returns the first matched element.
+var elem = document.querySelector('ul');
+console.log(elem);
 
 Difference b/w element attribute and element property
 -----------------------------------------------------
