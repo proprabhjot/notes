@@ -251,7 +251,7 @@ Spread operator:
 ================
 spread is negation to Rest.
 
-Rest operator take individual values and comnine them into an array. Spread operator take an array and split it into individual values.
+Rest operator take individual values and combine them into an array. Spread operator take an array and split it into individual values.
 
 Spread operator is part of the function calling statement or other.
 
@@ -305,7 +305,8 @@ Two benifits
 2. No binding of this. "this" is not bound in arrow functions.
     - Arrow functions don't contain this, prototype, arguments property.
 
-Syntax:
+1. shorter syntax
+
 var multiply = function(x, y){
     return x*y;
 };
@@ -343,48 +344,9 @@ var smartPhonePrices = smartPhones.map(smartPhone=>smartPhone.price);
 
 2. No binding of this. "this" is not bound in arrow functions.
 
-Every normal function define it's own this.
+Every function define it's own this.
 
-Different behaviors of this:
-----------------------------
-In Functions,
-function printThis(){
-    console.log(this);
-}
-// This referring to "window" object
-
-In methods,
-var person = {
-  firstName: "John",
-  lastName: "Doe"
-};
-
-person.print = printThis;
-person.print();
-// This referring to "person" object
-
-In a constructor,
-function Person(){
-    this.name = "John";
-    this.print = function(){
-        console.log(this);
-    }   
-}
-var person = new Person();
-person.print();
-
-Explicit this,
-
-we can explicitly set this of a function.
-function printThis(){
-    console.log(this);
-}
-
-printThis.call(person);
-printThis.apply(person);
-var personPrint = printThis.bind(person);
-
-In callbacks,
+For example in callbacks,
 
 function Person() {
   this.age = 0;
@@ -393,11 +355,11 @@ function Person() {
     this.age++;
     console.log(this.age);
   }, 1000);
-}
+} // Expected 1, 2, 3 ... Actual: NaN
 
 var p = new Person();
 
-Fix
+Conventional Fix:
 function Person() {
     var that = this;
     that.age = 0;
@@ -410,7 +372,7 @@ function Person() {
 
 var p = new Person();
 
-Arrow way:
+Fix with Arrow function:
 function Person(){
   this.age = 0;
 
@@ -427,7 +389,7 @@ An arrow function does not create its own this context.
 No binding of arguments
 
 function test(a, b){
-    console.log(arguments);
+  console.log(arguments);
 }
 test(2, 3);
 
@@ -451,7 +413,7 @@ var func = () => { foo: 1 }; // Gives undefined.
 
 var func = () => ({foo: 1});
 
-don't give line brasks before arrow
+don't give line brakes before arrow
 var func = ()
            => 1;
 
@@ -459,6 +421,8 @@ Classes:
 ========
 ES5:
 ----
+In ES5 we don't have the concept of classes. We use constructor functions as classes and prototype property for inheritance.
+
 Prototype is a hidden property of a function which helps in inheritance.
 
 Every JavaScript function has a prototype property and it is empty by default.
@@ -489,17 +453,16 @@ complexCalc.prototype = simpleObj;
 
 var complexObj = new complexCalc();
 
-
 ES6:
 ----
 class Employee {
-    doWork(){
-        return "done!";
-    }
+  doWork(){
+      return "done!";
+  }
 
-    getName(){
-        return "John";
-    }
+  getName(){
+      return "John";
+  }
 }
 
 let emp = new Employee();
@@ -508,17 +471,17 @@ emp.doWork();
 
 Employee.prototype.doWork(); //classes use prototype property in the background.
 
-Constructor: function in class which is invoked automatically while creating an object
+Constructor: Constructor is a function in class which is invoked automatically while creating an object.
 
 class Employee {
     constructor(name){
-        this.empName = name;
+      this.empName = name;
     }
     doWork(){
-        return "done!";
+      return "done!";
     }
     getName(){
-        return this.empName;
+      return this.empName;
     }
 }
 
@@ -531,39 +494,44 @@ getters and setters:
 Getter return the peoperty and setter set the property.
 
 class Employee {
-    constructor(name){
-        this.empName = name;
-    }
-	get name(){
-		return this.empName;
-    }
+  constructor(name){
+    this.empName = name;
+  }
+  
+  get name(){
+    return this.empName;
+  }
 }
 
 let emp = new Employee("john");
 emp.name
 
 class Employee {
-    constructor(name){
-        this.empName = name;
-    }
+  constructor(name){
+    this.empName = name;
+  }
+
 	get empName(){
 		return this.empName;
-    }
+  }
+
 	set empName(newName){
 		return this.empName = newName;
-    }
+  }
 } // It will create erros. We should not have same name for property and method
 
 class Person {
-    constructor(name){
-        this._name = name;
-    }
-	get name(){
-		return this._name;
-    }
-	set name(newName){
-		return this._name = newName;
-    }
+  constructor(name){
+    this._name = name;
+  }
+  
+  get name(){
+    return this._name;
+  }
+
+  set name(newName){
+    return this._name = newName;
+  }
 }
 var person = new Person("John");
 person.name
@@ -573,21 +541,21 @@ person.name = "Doe"; //Setting property
 Inheretance:
 ------------
 class Employee extends Person{
-    doWork(){
-        return `${this.name} is working`;
-    }
+  doWork(){
+    return `${this.name} is working`;
+  }
 }
 
 var emp = new Employee("John");
 
 // If we give empty constructor it throw error
 class Employee extends Person{
-    constructor(){
-        
-    }
-    doWork(){
-        return `${this.name} is working`;
-    }
+  constructor(){
+      
+  }
+  doWork(){
+    return `${this.name} is working`;
+  }
 }
 
 var emp = new Employee("John");
@@ -595,38 +563,39 @@ var emp = new Employee("John");
 Super:
 ------
 class Person {
-    constructor(name){
-        this._name = name;
-    }
+  constructor(name){
+    this._name = name;
+  }
 	get name(){
 		return this._name;
-    }
+  }
 	set name(newName){
 		return this._name = newName;
-    }
+  }
 }
 
 class Employee extends Person{    
-    // Without constructor works
-    // With empty constructor doesn't work
-    // With super(), without passsing name doesn't work
-    constructor(name){
-        super(name);
-    }    
-    doWork(){
-        return `${this.name} is working`;
-    }
+  // Without constructor works
+  // With empty constructor doesn't work
+  // With super(), without passsing name doesn't work
+  constructor(name){
+    super(name);
+  }
+
+  doWork(){
+    return `${this.name} is working`;
+  }
 }
 
 // Employee with two parameters
 class Employee extends Person{
-    constructor(name, title){
-        super(name);
-        this.title = title;
-    }    
-    doWork(){
-        return `${this.name} is working`;
-    }
+  constructor(name, title){
+    super(name);
+    this.title = title;
+  }    
+  doWork(){
+    return `${this.name} is working`;
+  }
 }
 
 var emp = new Employee("John", 'Mr');
@@ -636,53 +605,54 @@ Super function invokes the parent class constructor and forward arguments from c
 Overrides:
 ----------
 class Person {
-    constructor(name){
-        this.name = name;
-    }
+  constructor(name){
+    this.name = name;
+  }
 	get name(){
 		return this._name;
-    }
+  }
 	set name(newName){
 		return this._name = newName;
-    }
-    doWork(){
-        console.log("person is working");
-        return `person is working`;
-    }
+  }
+  doWork(){
+    console.log("person is working");
+    return `person is working`;
+  }
 }
 
 class Employee extends Person{
-    constructor(name, title){
-        super(name);
-        this.title = title;
-    }    
-    doWork(){
-        super.doWork(); // If we call this.doWork(), It will go to infinite loop.
-        return `${this.name} is working`;
-    }
+  constructor(name, title){
+    super(name);
+    this.title = title;
+  }    
+  doWork(){
+    super.doWork(); // If we call this.doWork(), It will go to infinite loop.
+    return `${this.name} is working`;
+  }
 }
 
 var emp = new Employee("John");
 emp.doWork();
 
-Note: There is no concept of private, public or protected in ES6 classes.
+Note: There are no access modifiers like public, private and protected in ES6 classes. In TypeScript we have these access modifiers.
 -----
 
 Modules:
 ========
 Good authors divide their books into chapters and sections; good programmers divide their programs into modules.
 
-In JavaScript each file is a module and all objects defined in the file belong to that module. 
+In JavaScript each file is a module and all objects defined in the file belong to that module.
+Another defination: Any javascript file which contains export or import statement can be considered as a module. 
 
 Using 'export' keyword One module can export objects, constants, functions, classes etc..., another module can import using 'import' keywodrd.
 
 //------ lib.js ------
 export const sqrt = Math.sqrt;
 export function square(x) {
-    return x * x;
+  return x * x;
 }
 export function diag(x, y) {
-    return sqrt(square(x) + square(y));
+  return sqrt(square(x) + square(y));
 }
 
 //------ main.js ------
