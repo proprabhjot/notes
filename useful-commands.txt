@@ -46,14 +46,13 @@ git clone => clone git repo
 
 git status => check for any changes
 
-git add -A => stage all changes     
+git add -A => stage all changes
+
+git add test.txt => stage test.txt
 
 git commit -m 'msg' => commit with msg
 
 git push => push changes to remote.
-
-Push to another user repo:
-git config --local credential.helper ""
 
 git pull => take update from remote.
 
@@ -79,7 +78,7 @@ Git Init:
 ---------
 git init
 > Do some change in some file.
-git add .
+git add -A
 git commit -m "First commit"
 git remote add origin https://github.com/nagarjuna-immadi/angular-todo.git
 git push -u origin master
@@ -98,6 +97,9 @@ Delete branch:
 --------------
 > git branch -d branchName ---> Delete local branch
 > git push --delete origin branchName ---> Delete remote branch
+
+Push to another user repo:
+git config --local credential.helper ""
 
 Git set upstream to forked repo:
 --------------------------------
