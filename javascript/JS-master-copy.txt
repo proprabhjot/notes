@@ -926,14 +926,7 @@ var valueAttribute = inputElement.getAttribute("value");
 
 If we change the value of input, value property gets changed, but not value attribute.
 
-Some attributes don't have equivalent properties. Ex: table span attributes, SVG attributes etc..
-
-SVG for circle:
-<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-  <circle cx="50" cy="50" r="50"/>
-</svg>
-
-Here cx, cy, r are just attributes. Those attributes don't have equivalent properties.
+Some attributes don't have equivalent properties. Ex: table span attributes etc..
 
 <tr><td colspan="2">Three-Four</td></tr>
 
@@ -952,7 +945,7 @@ Inside an event handler, this references the current element.
 
 <button onclick="alert(this.innerHTML)">Click me to see me</button>
 
-'event' contains the entire information about event.
+'event' contains the entire information about the event.
 
 <button onclick="console.log(event)">Click me to see me</button>
 
@@ -1051,7 +1044,7 @@ Tarrgeting means traverse through the DOM and find Targeted element.
 Bubling: When an event happens on an element, it first runs the handlers on it, then on its parent, then all the way up on other ancestors.
 P -> Div -> Form
 
-event.stopPropagation();
+event.stopPropagation(); // To prevent propagation.
 
 AJAX:
 =====
