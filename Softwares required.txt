@@ -3,5 +3,5 @@
  - NodeJs
  - MongoDB
  - Robo 3T - https://robomongo.org/
- - Postman - https://www.getpostman.com/apps
  - nodemon - npm install -g nodemon
+ - Postman - https://www.getpostman.com/apps

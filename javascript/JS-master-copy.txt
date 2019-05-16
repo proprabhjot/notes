@@ -1201,7 +1201,7 @@ var str = "Widget with id Widget";
 str.match(/Widget/); // Search stops after first occurence
 str.match(/Widget/g); // Returns an array with 2 elements
 str.match(/widget/); // Returns null. Case sensitive search
-str.match(/widget/ig); // Returns Returns an array with 2 elements. Case in-sensitive global search
+str.match(/widget/ig); // Returns an array with 2 elements. Case in-sensitive global search
 
 JavaScript Libraries:
 =====================
