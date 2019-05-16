@@ -920,15 +920,17 @@ Generally most of the Attributes have an equivalent Property for it. Below is an
 
 <input type="text" id="name" value="John" />
 
-var inputElement = document.getElementById("name");
-var valueProperty = inputElement.value;
-var valueAttribute = inputElement.getAttribute("value");
+var inputObj = document.getElementById("name");
+var valueProperty = inputObj.value;
+var valueAttribute = inputObj.getAttribute("value");
 
 If we change the value of input, value property gets changed, but not value attribute.
 
 Some attributes don't have equivalent properties. Ex: table span attributes etc..
 
-<tr><td colspan="2">Three-Four</td></tr>
+<table>
+    <tr><td colspan="2" id="span-elem">Three-Four</td></tr>
+</table>
 
 Events:
 =======
