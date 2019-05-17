@@ -9,7 +9,7 @@ Adding new features to "var" keyword will generate many backward compatability i
 Variable hoisting with var:
 ---------------------------
 var doWork = function(){
-	return x;
+  return x;
 } 
 
 doWork() // Return error. x is not defined
@@ -101,6 +101,7 @@ doWork();
         return x; 
     }
     doWork();
+    console.log(x);
 })();
 
 Summary of 'let' keyword:
@@ -122,8 +123,8 @@ one thing we have to note about constants is, If we try to re-assign(changing re
 
 const arr = [1,2];
 arr = [3,4]; // Return error
-arr[1] = 3; // Allowed
-arr[2] = 4; // Allowed
+arr[0] = 3; // Allowed
+arr[1] = 4; // Allowed
 
 const user = {
     name: 'John',
@@ -142,6 +143,7 @@ Scope of const also block level.
 		console.log(test);
     } 
     doWork();
+		console.log(test);
 })();
 
 Summary of 'const' keyword:
@@ -213,8 +215,6 @@ doWork(null); // passing null - name is 'null'
 null and undefined are not same in Javascript.
 undefined - existed but empty
 null - not existed
-
-If we intentially pass null to function then Default parameters consider that null value.
 
 let doWork = function(a = 1, b = 2, c = 3){
     console.log(a);
