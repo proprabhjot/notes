@@ -29,7 +29,7 @@ var doWork = function(flag){
         var x = 3; //This Variable will be hoisted
     }	
     return x;
-} 
+}
 
 doWork(false) // We should get error. But, we don't get because the variable x is hoisted to top of the function.
 
@@ -192,12 +192,7 @@ Tip to remember syntax: Simply copy object to the left side and replace values w
 
 If we want to use same key name, then we don't need to specify the variable name.
 
-let {firstName, lastName, social: {twitter}} = 
-    {
-        firstName: "John", 
-        lastName: "Smith", 
-        social: {twitter: "twId", fb: "fbId"}
-    };
+let {firstName, lastName, social: {twitter}} = {firstName: "John",lastName: "Smith",social: {twitter: "twId", fb: "fbId"}};
 console.log(firstName);
 console.log(lastName);
 console.log(twitter);
@@ -289,7 +284,8 @@ Template literals starts and end with Backtic(`). ${x} replace the value of x in
 
 Substitute the values and Execute the expressions:
 let x=1,y=2;
-let template = `${x} add ${y} is ${x+y}`;
+let template = 'Addition of ' + x + ' and ' + y + ' is ' + (x+y)
+let template = `Addition of ${x} and ${y} is ${x+y}`;
 
 New lines don't break the code:
 let html = `<div>
