@@ -307,7 +307,7 @@ var multiply = function(x, y){
     return x*y;
 };
 
-var multiply = (x, y) => {return x*y;};
+var multiply = (x, y) => {return x*y};
 
 The symbol '=>' is called FAT ARROW.
 
@@ -320,6 +320,8 @@ Parentheses are optional when only one parameter is present
 var strToArr = function(str){
     return str.split(" ");
 };
+
+strToArr('Hello Good Morning')
 
 var strToArr = str => str.split(" ");
 
@@ -340,7 +342,7 @@ var smartPhonePrices = smartPhones.map(smartPhone=>smartPhone.price);
 
 2. No binding of this. "this" is not bound in arrow functions.
 
-Every function define it's own this.
+Every regular function define it's own this.
 
 For example in callbacks,
 
@@ -404,6 +406,7 @@ Foo.prototype
 Returning object:
 -----------------
 var func = (a, b) => a+b;
+func(2, 3);
 
 var func = () => { foo: 1 }; // Gives undefined.
 
@@ -516,6 +519,8 @@ class Employee {
   }
 } // It will create erros. We should not have same name for property and method
 
+let emp = new Employee("john");
+
 class Person {
   constructor(name){
     this._name = name;
@@ -536,6 +541,20 @@ person.name = "Doe"; //Setting property
 
 Inheretance:
 ------------
+class Person {
+  constructor(name){
+    this._name = name;
+  }
+  
+  get name(){
+    return this._name;
+  }
+
+  set name(newName){
+    return this._name = newName;
+  }
+}
+
 class Employee extends Person{
   doWork(){
     return `${this.name} is working`;
