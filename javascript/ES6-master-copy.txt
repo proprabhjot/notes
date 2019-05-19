@@ -721,6 +721,7 @@ webpack --watch  - build and keep on checking for changes.
 Default Exports:
 ----------------
 An ES6 module can export a main value. Default exports are easy to import.
+We have to export only one default value from one module.
 
 Default export of function:
 //------ myFunc.js ------
@@ -738,7 +739,7 @@ export default class {}
 import MyClass from 'MyClass';
 const inst = new MyClass();
 
-We can default export direct values also.
+We can do default export of direct values also.
 
 export default 'abc';
 export default foo();
@@ -763,17 +764,12 @@ Imports are hoisted: Therefore, it doesn’t matter where you mention them in a 
 foo();
 import { foo } from 'my_module';
 
-Import all:
------------ 
-import * as math from 'foo';
-math.bar();
-
 Symbols:
 ========
 Symbol is a primitive data type.
 
 Object property keys may be either of string type, or of symbol type. Not numbers, not booleans, only strings or symbols.
-Ex: iterator symbol on arrays and maps etc...
+Ex: iterator symbol on arrays, maps etc...
 
 “Symbol” value represents a unique identifier.
 
@@ -794,103 +790,14 @@ let id2 = Symbol("id");
 
 id1 == id2 // false
 
-Symbols don’t auto-convert to a string:
-let id = Symbol("id");
-alert(id); // TypeError: Cannot convert a Symbol value to a string
+for...of loop
+=============
+We can use this for of loop to iterate through values of iterables like arrays, maps etc...
 
-let id = Symbol("id");
-alert(id.toString()); // Symbol(id), now it works
-
-If we want to use a symbol in an object literal, we need to use square brackets around it.
-let id = Symbol("id");
-
-let user = {
-  name: "John",
-  [id]: 123 // not just "id: 123"
-};
-
-Read symbol
-user[id] // 123
-
-Make an object symbol property readonly:
-----------------------------------------
-let id = Symbol("id");
-
-let user = {
-  name: "John",
-  [id]: 123 // not just "id: 123"
-};
-
-user[id] // 123
-
-id = null; // By making id reference as null, we can't access the id symbol in the user object.
-
-user[id] // undefined
-
-Symbols are skipped by for…in loop.
-let id = Symbol("id");
-let user = {
-  name: "John",
-  age: 30,
-  [id]: 123
-};
-
-for (let key in user) {
-    console.log(key);
+let fruits = ["Lemon","Apple","Orange","Peach"];
+for(let fruit of fruits) {
+	console.log(fruit);
 }
-
-Object.keys(user); // Object.keys also skips symbol keys
-
-Object.assign() copies symbols also.
-let id = Symbol("id");
-let user = {
-  [id]: 123
-};
-let clone = Object.assign({}, user);
-console.log( clone[id] ); // 123
-
-Global symbols:
----------------
-Some times we need to use same symbol throughout the application. So, we can ceate gloal symbols and use it.
-
-To achieve that, there exists a global symbol registry. We can create symbols in it and access them later, and it guarantees that repeated accesses by the same name return exactly the same symbol.
-
-Symbols inside the registry are called global symbols.
-
-Using Symbol.for(key), we can create and access global symbol with 'key' in registry.
-
-Symbol.for(key) checks the global registry, and if there’s a symbol described as key, then returns it, otherwise creates a new symbol with Symbol(key) and stores it in the registry by the given key.
-
-// read from the global registry
-let id = Symbol.for("id"); // if the symbol did not exist, it is created
-
-// read it again
-let idAgain = Symbol.for("id");
-
-// the same symbol
-console.log( id === idAgain ); // true
-
-Symbol.keyFor(sym): Takes symbol and return key for that symbol.
-------------------
-let sym = Symbol.for("name");
-let sym2 = Symbol.for("id");
-
-// get name from symbol
-console.log( Symbol.keyFor(sym) ); // name
-console.log( Symbol.keyFor(sym2) ); // id
-
-Symbol.keyFor works for only gloal symbols not for normal symbols. For normal symbols it will return undefined.
-
-System symbols:
----------------
-System symbols are used by javascript internally. Below are examples.
-- Symbol.iterator
-- Symbol.hasInstance
-- Symbol.isConcatSpreadable
-- Symbol.toPrimitive
-- etc ....
-
-// for of loop
 
 Object changes:
 ===============
@@ -977,13 +884,6 @@ create array from array like objects.
 var arrayLike = document.querySelectorAll('div');
 
 var arr = Array.from(arrayLike);
-
-array.entries()
-Returns an array iterator with entries.
-var names = ["John", "Doe", "Jim"];
-
-var entries = names.entries(); // We can convert to map
-var firstEntry = entries.next().value;
 
 Sites to Refer:
 ===============
