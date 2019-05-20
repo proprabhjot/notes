@@ -644,11 +644,11 @@ class Employee extends Person{
   }    
   doWork(){
     super.doWork(); // If we call this.doWork(), It will go to infinite loop.
-    return `${this.name} is working`;
+    return `${this.title} ${this.name} is working`;
   }
 }
 
-var emp = new Employee("John");
+var emp = new Employee("John", "Mr");
 emp.doWork();
 
 Note: There are no access modifiers like public, private and protected in ES6 classes. In TypeScript we have these access modifiers.
@@ -661,26 +661,29 @@ Another defination: Any javascript file which contains export or import statemen
 
 Using 'export' keyword One module can export objects, constants, functions, classes etc..., another module can import using 'import' keywodrd.
 
-//------ lib.js ------
-export const sqrt = Math.sqrt;
-export function square(x) {
-  return x * x;
-}
-export function diag(x, y) {
-  return sqrt(square(x) + square(y));
-}
+//------ math-functions.js ------
+const sum = (a, b) => {
+    return a + b;
+};
 
-//------ main.js ------
-import { square, diag } from 'lib';
-console.log(square(11)); // 121
-console.log(diag(4, 3)); // 5
+const product = (a, b) => {
+    return a * b;
+};
+
+export {sum, product};
+
+//------ app.js ------
+import {sum, product} from './modules/math-functions';
+
+resultSum.textContent = `The sum of ${a} and ${b} is ${sum(a, b)}.`;
+resultProduct.textContent = `The product of ${a} and ${b} is ${product(a, b)}.`;
 
 You can also import the complete module:
 
-//------ main.js ------
-import * as lib from 'lib';
-console.log(lib.square(11)); // 121
-console.log(lib.diag(4, 3)); // 5
+//------ app.js ------
+import * as math from './modules/math-functions';
+resultSum.textContent = `The sum of ${a} and ${b} is ${math.sum(a, b)}.`;
+resultProduct.textContent = `The product of ${a} and ${b} is ${math.product(a, b)}.`;
 
 Browsers are not yet supporting modules feature in ES6.
 
@@ -724,18 +727,20 @@ An ES6 module can export a main value. Default exports are easy to import.
 We have to export only one default value from one module.
 
 Default export of function:
-//------ myFunc.js ------
-export default function () {} 
+//------ default-demo.js ------
+export default function () {
+    console.log('default function called');
+}
 
-//------ main1.js ------
-import myFunc from 'myFunc';
-myFunc();
+//------ app.js ------
+import MyFunc from './modules/default-demo';
+MyFunc();
 
 Default export of class:
-//------ MyClass.js ------
+//------ default-demo.js ------
 export default class {} 
 
-//------ main2.js ------
+//------ app.js ------
 import MyClass from 'MyClass';
 const inst = new MyClass();
 
@@ -750,19 +755,19 @@ export default { no: false, yes: true };
 Imports and exports must be at the top level / first level(i.e not wrapped in any block {}).
 // No conditional Imports
 if (Math.random()) {
-    import 'foo'; // SyntaxError
+    import {sum, product} from './modules/math-functions'; // SyntaxError
 }
 
 // You can’t even nest `import` and `export`
 // inside a simple block:
 {
-    import 'foo'; // SyntaxError
+    import {sum, product} from './modules/math-functions'; // SyntaxError
 }
 
 Imports are hoisted: Therefore, it doesn’t matter where you mention them in a module and the following code works without any problems:
 
-foo();
-import { foo } from 'my_module';
+MyFunc();
+import MyFunc from './modules/default-demo';
 
 Symbols:
 ========
@@ -856,8 +861,6 @@ Array changes:
 find and findIndex:
 -------------------
 We use indexOf to search for an element in an array.
-
-for conditional based search we use for loop.
 
 We can use find() and findIndex() methods for conditional based search.
 
