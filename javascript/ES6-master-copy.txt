@@ -723,7 +723,7 @@ webpack --watch  - build and keep on checking for changes.
 
 Default Exports:
 ----------------
-An ES6 module can export a main value. Default exports are easy to import.
+An ES6 module can export a main value as default value. Default exports are easy to import.
 We have to export only one default value from one module.
 
 Default export of function:
@@ -758,8 +758,7 @@ if (Math.random()) {
     import {sum, product} from './modules/math-functions'; // SyntaxError
 }
 
-// You can’t even nest `import` and `export`
-// inside a simple block:
+// You can’t even nest `import` and `export` inside a simple block:
 {
     import {sum, product} from './modules/math-functions'; // SyntaxError
 }
