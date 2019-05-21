@@ -701,20 +701,6 @@ Code Repo: https://github.com/angular-online/getting-started-with-webpack-and-es
 
 > webpack --watch
 
-NPM commands:
--------------
-// Create new js project
-> npm init
-
-// Install webpack locally in your project and update package.json file
-> npm install webpack --save
-
-// Build project
-> webpack
-
-// Build and watch project
-> webpack --watch
-
 webpack commands:
 ----------------- 
 webpack - build and exit.
