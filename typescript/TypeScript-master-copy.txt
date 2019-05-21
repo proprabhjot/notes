@@ -10,12 +10,10 @@ tsc stands for "TypeScript Compiler".
 
 tsc helloworld.ts => helloworld.ts compile to helloworld.js
 
-function Person() {
-    this.name = 'John Doe';
-    this.age = 25;
+class Person {
+    name = 'John Doe';
+    age = 25;
 }
-
-let personObj = new Person();
 
 In .ts files we can write valid JavaScript. All valid JavaScript statements are valid TypeScript statements.
 
@@ -127,7 +125,7 @@ enum Direction {
     Up = "UP",
     Down = "DOWN",
     Left = "LEFT",
-    Right = "RIGHT",
+    Right = "RIGHT"
 } // For string enums we need to initialize all the values.
 
 enum BooleanLikeHeterogeneousEnum {
@@ -197,8 +195,6 @@ function infiniteLoop(): never {
 
 Type assertions:
 ----------------
-Type assertions are a way to tell the compiler “trust me, I know what I’m doing.”
-
 A type assertion is like a type cast in other languages.
 
 Two syntaxes available for type assertion:
@@ -214,7 +210,7 @@ let strLength: number = (someValue as string).length;
 
 Union Types:
 ------------
-function padLeft(value: string, padding: any) {
+function paddingLeft(padding: any) {
     if (typeof padding === "number") {
         // Do something and return
     }
@@ -225,11 +221,11 @@ function padLeft(value: string, padding: any) {
 }
 
 As per the above function, padding should be string or number. 
-padLeft('right', true); // TSC can't find error on calling with 'true'.
+paddingLeft(true); // TSC can't find error on calling with 'true'.
 
 If we use union, we can restrict to string | number.
 
-function padLeft(value: string, padding: string | number) {
+function paddingLeft(padding: string | number) {
     if (typeof padding === "number") {
         // Do something and return
     }
@@ -238,7 +234,7 @@ function padLeft(value: string, padding: string | number) {
     }
     throw new Error(`Expected string or number, got '${padding}'.`);
 }
-padLeft('right', true); // TSC will return error.
+paddingLeft(true); // TSC will return error.
 
 Conclusion of Datatypes:
 ------------------------ 
