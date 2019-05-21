@@ -265,44 +265,11 @@ console.log(b);
 
 '?' represents the optional value / parameter. If we don't specify '?' above, we will get error in compilation.
 
-// Destructuring in functions
-function f({ a, b=1000 }:{ a: string, b?: number } = { a: "test" }): void {
-    console.log(a); // test
-    console.log(b); // 1000
-}
-f();
-
-function f({ a, b=1000 }:{ a: string, b?: number } = { a: "test", b: 2000 }): void {
-    console.log(a); // test
-    console.log(b); //2000
-}
-f();
-
-function f({ a, b=1000 }:{ a: string, b?: number } = { a: "test", b: 2000 }): void {
-    console.log(a); // test2
-    console.log(b); // 3000
-}
-f({ a: "test2", b:3000 });
-
-Spread Operator:
-================
-let first = [1, 2];
-let second = [3, 4];
-let bothPlus = [0, ...first, ...second, 5];
-
-we can also spread objects:
-let defaults = { food: "spicy", price: "$$", ambiance: "noisy" };
-let search = { ...defaults, cuisine: "chinese" };
-
-// Food 'rich' will be overwritten by spicy.
-let defaults = { food: "spicy", price: "$$", ambiance: "noisy", add: function() {} };
-let search = { food: "rich", ...defaults };
-
 Interfaces:
 ===========
 We can understand interfaces as custom datatypes.
 
-Interfaces define the shape of a value. TypeScript always check whether the value is in specified format or not. This is called type-checking / duck typing / structural sub typing.
+Interfaces define the shape of a value. TypeScript always check whether the value is in specified format or not.
 
 function printLabel(labelledObj: { label: string }) {
     console.log(labelledObj.label);
@@ -312,6 +279,8 @@ let myObj = {size: 10, label: "Size 10 Object"};
 printLabel(myObj);
 
 Type checker checks for label in myObj. If it is not found, compiler will return error.
+
+We can specify the stucture of labelledObj param using interface like below.
 
 interface LabelledValue {
     label: string;
@@ -337,7 +306,12 @@ interface SquareConfig {
     width?: number;
 }
 
-function createSquare(config: SquareConfig): {color: string; area: number} {
+interface Square {
+    color: string; 
+    area: number
+}
+
+function createSquare(config: SquareConfig): Square {
     let newSquare = {color: "white", area: 100};
     if (config.color) {
         newSquare.color = config.color;
@@ -365,18 +339,18 @@ p1.x = 5; // error!
 
 TypeScript comes with a ReadonlyArray<T> type that is the same as Array<T> with all mutating methods removed, so you can make sure you don’t change your arrays after creation:
 
-let a: number[] = [1, 2, 3, 4];
+let a: Array<number> = [1, 2, 3, 4];
 let ro: ReadonlyArray<number> = a;
 ro[0] = 12; // error!
 ro.push(5); // error!
 ro.length = 100; // error!
 a = ro; // error! - can't assign ReadonlyArray to normal array. But, type assertion works.
 
-a = ro as number[];
+a = ro as Array<number>;
 
 readonly vs const:
 ------------------
-Variables use const whereas properties use readonly.
+Variables use const whereas object properties use readonly.
 const is for variables.
 readonly is for properties of objects.
 
@@ -966,7 +940,6 @@ function sealed(constructor: Function) {
     Object.seal(constructor.prototype);
 }
 
-
 Method Decorators:
 ------------------
 A Method Decorator is applied just before a method declaration.
@@ -1062,20 +1035,22 @@ After adding the typings file, include jquery in index.html file, then jQuery st
 
 Need for typings file:
 ----------------------
-// Example.js
-var result = displayMessage(message) {
-    alert(message);
+// message.js
+function displayMessage(message) {
+    return message;
 }
 
-With this file alone, my TypeScript code don't have any clue where this displayMessage function exists in. It don't know its name and it don't know its parameters. We can fix this by describing it in a definition file as such (Example.d.ts):
+// app.ts
+let result = displayMessage('Hello!');
 
-// Example.d.ts
-declare function displayMessage(message: string);
+If we include message.js file in our project and use displayMessage function in one of our .ts file(app.ts), then our typescript compiler don't know any thing about displayMessage function while compiling app.ts; We can fix this by describing it in a definition file as such (message.d.ts)
+
+// message.d.ts
+declare function displayMessage(message: string): string;
 
 
 Confusing Syntaxes:
 ===================
-
 Array notation:
 ---------------
 let list: Array<number> = [1, 2, 3];
@@ -1101,7 +1076,7 @@ function identity<T>(arg: T): T {
 let myIdentity: <T>(arg: T) => T = identity;
 let myIdentity: {<T>(arg: T): T} = identity; // Generic interface with call signature of an object literal type
 
-// Generic interface as function
+// Generic interface - interface version
 interface GenericIdentityFn {
     <T>(arg: T): T;
 }
@@ -1112,7 +1087,7 @@ function identity<T>(arg: T): T {
 
 let myIdentity: GenericIdentityFn = identity;
 
-// Generic interface as function - another syntax
+// Generic interface - another syntax
 interface GenericIdentityFn<T> {
     (arg: T): T;
 }
