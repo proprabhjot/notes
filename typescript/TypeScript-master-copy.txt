@@ -148,7 +148,7 @@ list[1] = 100;
 
 Void:
 -----
-'void' is a datatype opposite to 'any'. 'void' is used to represent the absence of having any type.
+'void' is used to represent the absence of having any type.
 
 function warnUser(): void {
     alert("This is my warning message");
@@ -176,9 +176,9 @@ tsc --strictNullChecks temp.ts
 
 strictNullChecks is encouraged by TypeScript. As, it can avoid many common errors.
 
-While using strictNullChecks, if we want to accept 'string' or 'undefined' or 'null' for a variable, we can use union datatypes string|undefined|null.
+While using strictNullChecks, if we want to accept 'number' or 'undefined' or 'null' for a variable, we can use union datatypes number|undefined|null.
 
-var str: string|undefined|null;
+var str: number|undefined|null;
 
 Never:
 ------
@@ -362,7 +362,7 @@ interface SearchFunc {
     (source: string, subString: string): boolean;
 }
 
-let mySearch: SearchFunc = function(source: string, subString: string) {
+let mySearch: SearchFunc = function(source: string, subString: string): boolean {
     let result = source.search(subString);
     return result > -1;
 }
@@ -371,7 +371,7 @@ To describe a function type with an interface, we give the interface a call sign
 
 For function types to correctly type-check, the names of the parameters do not need to match. We can write the above example like this:
 
-let mySearch: SearchFunc = function(src: string, sub: string) {
+let mySearch: SearchFunc = function(src: string, sub: string): boolean {
     let result = src.search(sub);
     return result > -1;
 }
