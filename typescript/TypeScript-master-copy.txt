@@ -442,11 +442,16 @@ When an interface type extends a class type it inherits the members of the class
 Interfaces inherit even the private and protected members of a base class.
 
 class Control {
-    private state: any;
+    state: any;
 }
 
 interface SelectableControl extends Control {
     select(): void;
+}
+
+class SomeControl implements SelectableControl {
+    state: any = 'checked';
+    select(): void {}
 }
 
 Classes:
@@ -525,7 +530,8 @@ class Animal {
     constructor(theName: string) { this.name = theName; }
 }
 
-new Animal("Cat").name; // Error: 'name' is private;
+var animalObj = new Animal("Cat");
+animalObj.name; // Error: 'name' is private;
 
 protected:
 ----------
@@ -544,18 +550,18 @@ class Employee extends Person {
         this.department = department;
     }
 
-    protected getElevatorPitch() {
+    protected getEmpDetails() {
         return `Hello, my name is ${this.name} and I work in ${this.department}.`;
     }
 
     public someMethod(){
-        this.getElevatorPitch();
+        this.getEmpDetails();
         // Do something
     }
 }
 
 let emp = new Employee("Howard", "Sales");
-emp.getElevatorPitch(); // error
+emp.getEmpDetails(); // error
 emp.name; // error
 emp.someMethod();
 
