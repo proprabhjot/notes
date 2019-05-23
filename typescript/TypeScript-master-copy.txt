@@ -476,15 +476,15 @@ class Animal {
     }
 }
 
-class Dog extends Animal {
-    bark() {
-        console.log('Dog Barking');
+class Horse extends Animal {
+    run() {
+        console.log('Horse is running');
     }
 }
 
-const dog = new Dog();
-dog.bark();
-dog.move(10);
+const horse = new Horse();
+horse.run();
+horse.move(10);
 
 super:
 ------
@@ -504,7 +504,7 @@ class Horse extends Animal {
     }
 }
 
-let tom: Animal = new Horse("Tommy the Palomino");
+let tom: Horse = new Horse("Tommy the Palomino");
 tom.move(34);
 
 Public, private, and protected modifiers:
@@ -600,7 +600,7 @@ We can use any modifier like public, private, protected, and readonly before par
 
 Accessors (getters/setters):
 ----------------------------
-let passcode = "secret passcode";
+let isLoggedIn = true;
 
 class Employee {
     private _fullName: string;
@@ -610,7 +610,7 @@ class Employee {
     }
 
     set fullName(newName: string) {
-        if (passcode && passcode == "secret passcode") {
+        if (isLoggedIn) {
             this._fullName = newName;
         } else {
             console.log("Error: Unauthorized update of employee!");
