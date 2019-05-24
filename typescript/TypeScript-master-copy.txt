@@ -720,6 +720,7 @@ TypeScript can figure out the return type by looking at the return statements, s
 function type:
 --------------
 let myAdd: (x: number, y: number) => number =  function(x: number, y: number): number { return x + y; };
+let myAdd: {(x: number, y: number): number} =  function(x: number, y: number): number { return x + y; };
 
 myAdd is a variable of type (x: number, y: number) => number. It should accept two numerical parameters and return numeric.
 
@@ -824,6 +825,19 @@ let randomColor: number = randomElem<string>(colors); // 'number' for randomColo
 TypeScript can infer the type information 'T', if we don't send it while calling the function.
 let colors: string[] = ['violet', 'indigo', 'blue', 'green'];
 let randomColor: number = randomElem(colors); // Removed <string>, but still generic works and we get error in compilation
+
+// Generic class
+class Greeter<T> {
+    greeting: T;
+    constructor(message: T) {
+        this.greeting = message;
+    }
+    greet() {
+        return this.greeting;
+    }
+}
+
+let greeter = new Greeter<string>("Hello, world");
 
 Type Inference:
 ===============
@@ -1008,6 +1022,11 @@ class Greeter {
 
 HTML5 Web APIs in TS:
 =====================
+
+To define the shape of an object like user, we use interface IUser.
+
+To define the shape of a DOM object we use Web API interfaces.
+
 We can find list of all web api interfaces in below url.
 https://developer.mozilla.org/en-US/docs/Web/API
 
@@ -1028,6 +1047,8 @@ Below are few html interfaces we frequently use.
 
 How to use JavaScript libraries in TypeScript:
 ==============================================
+Ex: typings-exmpl folder
+
 We need to install typings file of JavaScript library to work.
 
 To install typings file for jQuery we need to run below.
@@ -1047,14 +1068,15 @@ Type casting / assertions:
 let strLength: number = (<string>someValue).length;
 let strLength: number = (someValue as string).length;
 
-Generics:
----------
+Generics Syntaxes
+-----------------
 function identity<T>(arg: T): T {
     return arg;
 }
 let output = identity<string>("myString");
 
-// Generic interface
+Generic function data type / shape
+----------------------------------
 function identity<T>(arg: T): T {
     return arg;
 }
@@ -1062,7 +1084,8 @@ function identity<T>(arg: T): T {
 let myIdentity: <T>(arg: T) => T = identity;
 let myIdentity: {<T>(arg: T): T} = identity; // Generic interface with call signature of an object literal type
 
-// Generic interface - interface version
+Generic function interface
+--------------------------
 interface GenericIdentityFn {
     <T>(arg: T): T;
 }
@@ -1073,7 +1096,8 @@ function identity<T>(arg: T): T {
 
 let myIdentity: GenericIdentityFn = identity;
 
-// Generic interface - another syntax
+Generic function interface - another syntax
+--------------------------
 interface GenericIdentityFn<T> {
     (arg: T): T;
 }
@@ -1084,22 +1108,8 @@ function identity<T>(arg: T): T {
 
 let myIdentity: GenericIdentityFn<number> = identity; 
 
-
-// Generic class
-class Greeter<T> {
-    greeting: T;
-    constructor(message: T) {
-        this.greeting = message;
-    }
-    greet() {
-        return this.greeting;
-    }
-}
-
-let greeter = new Greeter<string>("Hello, world");
-
-Generic Constraints:
---------------------
+Generic Constraints
+-------------------
 function loggingIdentity<T>(arg: T): T {
     console.log(arg.length);  // Error: T doesn't have .length
     return arg;
