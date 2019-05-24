@@ -886,8 +886,6 @@ Decorator is special kind of function which can be applied to class, method, pro
 
 Decorators are a stage 2 proposal for JavaScript and are available as an experimental feature of TypeScript.
 
-Simple comparision to understand: Person -> Apply School decorator -> Apply College decorator ->  Apply Company decorator -> Finally became an employee. Still he is a Person not Animal or Tree etc... In the whole process Person gets extended with more capabilities without changing the core characteristics of person. 
-
 To enable experimental support for decorators, you must enable the "experimentalDecorators" compiler option either on the command line or in your tsconfig.json
 
 tsc --target ES5 --experimentalDecorators
@@ -1036,22 +1034,6 @@ To install typings file for jQuery we need to run below.
 npm install --save-dev @types/jquery
 
 After adding the typings file, include jquery in index.html file, then jQuery starts working.
-
-Need for typings file:
-----------------------
-// message.js
-function displayMessage(message) {
-    return message;
-}
-
-// app.ts
-let result = displayMessage('Hello!');
-
-If we include message.js file in our project and use displayMessage function in one of our .ts file(app.ts), then our typescript compiler don't know any thing about displayMessage function while compiling app.ts; We can fix this by describing it in a definition file as such (message.d.ts)
-
-// message.d.ts
-declare function displayMessage(message: string): string;
-
 
 Confusing Syntaxes:
 ===================
