@@ -1022,7 +1022,6 @@ class Greeter {
 
 HTML5 Web APIs in TS:
 =====================
-
 To define the shape of an object like user, we use interface IUser.
 
 To define the shape of a DOM object we use Web API interfaces.
@@ -1036,7 +1035,7 @@ private x : HTMLInputElement;
 this.x = <HTMLInputElement>document.getElementById(xId);
 this.x = document.getElementById(xId) as HTMLInputElement;
 
-Below are few html interfaces we frequently use.
+Below are few html interfaces,
 - HTMLInputElement
 - HTMLSpanElement
 - HTMLDivElement
@@ -1073,7 +1072,7 @@ Generics Syntaxes
 function identity<T>(arg: T): T {
     return arg;
 }
-let output = identity<string>("myString");
+let output = identity<string>("myString"); // Calling a generic function
 
 Generic function data type / shape
 ----------------------------------
