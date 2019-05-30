@@ -4,4 +4,3 @@
  - MongoDB
  - Robo 3T - https://robomongo.org/
  - nodemon - npm install -g nodemon
- - Postman - https://www.getpostman.com/apps
