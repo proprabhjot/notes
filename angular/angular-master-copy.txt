@@ -87,8 +87,6 @@ The @NgModule decorator is a function that takes a single metadata object, whose
 
 Every Angular app has a root module, conventionally named AppModule, which provides the bootstrap mechanism that launches the application.
 
-Like JavaScript modules, NgModules can import functionality from other NgModules, and allow their own functionality(components, directives, pipes) to be exported and used by other NgModules.
-
 Components:
 -----------
 import { Component } from '@angular/core';
@@ -128,8 +126,6 @@ To define a class as a service in Angular, use the @Injectable decorator to prov
 export class TodoService {
 
 }
-
-service class definition is immediately preceded by the @Injectable decorator.
 
 Decorators:
 -----------
@@ -233,7 +229,7 @@ We can call component functions from interpolation bindings.
 
 Interpolation bindings evaluates the expression and converts the final value to string.
 
-** In template files, we need to give image paths relative to the index.html file. Not relative to the template file.
+** In template files, we need to give image paths relative to the index.html file OR to the template file.
 
 2. Property Binding: []
 ------------------------
@@ -296,8 +292,8 @@ The below bindings do the same.
 It's always our choice to choose which one to use in b/w interpolation and property bindings.
 
 When setting an element property to a non-string data value, you must use property binding.
-<app-hero-detail [hero]="currentHero" [strength]="heroStrength"></app-hero-detail> // Here 'strength' will get numerical value.
-<app-hero-detail [hero]="currentHero" strength={{heroStrength}}></app-hero-detail> // Here 'strength' will get string value. Because, interpolation binding converts the given value to string.
+<app-hero-detail [hero]="currentHero"></app-hero-detail> // Here 'hero' will get value [object Object].
+<app-hero-detail hero="{{currentHero}}"></app-hero-detail> // Here 'hero' will get value [object Object]. Because, interpolation binding converts the given value to string.
 
 Angular don't allow html with script tags in data bindings. It sanitizes before binding.
 
@@ -316,14 +312,7 @@ var valueAttribute = inputElement.getAttribute("value");
 
 If we change the value of input, value property gets changed, but not value attribute.
 
-Some attributes don't have equivalent properties. Ex: table span attributes, SVG attributes etc..
-
-SVG for circle:
-<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-  <circle cx="50" cy="50" r="50"/>
-</svg>
-
-Here cx, cy, r are just attributes. Those attributes don't have equivalent properties.
+Some attributes don't have equivalent properties. Ex: table span attributes etc...
 
 <tr><td colspan="{{1 + 1}}">Three-Four</td></tr> will generate an error. Angular will fail to assign the value to colspan attribute.
 
@@ -333,7 +322,7 @@ Because, colspan is not a property, it's just an attribute. So, we need to use a
 3.2 Class binding
 -----------------
 There are 3 kinds of class bindings in Angular.
-I. Reset/override all class names with a binding
+I. Reset/override all class names with class property binding
 
 <div class="bad curly special" [class]="badCurly">Bad curly</div>
 
@@ -394,7 +383,7 @@ Event binding is also a one-way data binding.
 
 In data binding data flows from Component -> View.
 
-In event binding data flows from View -> Component.
+In event binding event data flows from View -> Component.
 
 Ex:
 <button (click)="onSave($event)">Save</button>
@@ -638,7 +627,7 @@ The above interpolation gives error: Can't read the property name of null. The v
 
 The non-null assertion operator ( !. )
 --------------------------------------
-When we are using strictNullChecks flag, TypeScript compiler will throw errors even it can't understand the variable is null or not.
+When we are using strictNullChecks flag, TypeScript compiler will throw errors even if it can't understand the variable is null or not.
 
 If we know a variable is won't become null in runtime, then we can explicitly tell the TSC that the variable is not a null.
 
