@@ -118,8 +118,6 @@ Directives:
 Angular provides some directives like *ngFor, *ngIf, ngClass etc..
 We can also write our own directives.
 
-We use directives in templates to manipulate the DOM. Before displaying the view, angular evaluates all the directives in that view.
-
 Services:
 ---------
 For data or logic that is not associated with a specific view, and that you want to share across components, you create a service class. 
