@@ -202,7 +202,7 @@ Don't forget the leading asterisk (*) in *ngFor. It is an essential part of the 
 ngFor can repeat items for any iterable object.
 
 ngIf: 
-ngIf is not for showing/hiding the element. Depends on condition it will add/remove the elelment in the DOM, that will improve the performance of the app when including / excluding big chunks of html in the DOM.
+Depends on condition it will add/remove the elelment in the DOM.
 
 Don't forget the leading asterisk (*) in *ngIf. It is an essential part of the syntax.
 
@@ -242,7 +242,7 @@ Setting properties of html elements:
 <button [disabled]="formNotChanged">Cancel</button>
 
 Setting a property of a directive:
-<div [ngClass]="classes">[ngClass] binding to the classes property</div>
+<div ngClass [ngClass]="classes">[ngClass] binding to the classes property</div>
 
 Setting the property of a custom component
 <app-hero-detail [hero]="currentHero"></app-hero-detail>
@@ -292,7 +292,7 @@ The below bindings do the same.
 It's always our choice to choose which one to use in b/w interpolation and property bindings.
 
 When setting an element property to a non-string data value, you must use property binding.
-<app-hero-detail [hero]="currentHero"></app-hero-detail> // Here 'hero' will get value [object Object].
+<app-hero-detail [hero]="currentHero"></app-hero-detail> // Here 'hero' will get json object.
 <app-hero-detail hero="{{currentHero}}"></app-hero-detail> // Here 'hero' will get value [object Object]. Because, interpolation binding converts the given value to string.
 
 Angular don't allow html with script tags in data bindings. It sanitizes before binding.
@@ -336,7 +336,7 @@ We can apply two or more single class bindings on an element.
 Single class bindings don't override existing classes.
 <div class="not" [class.very]="special" [class.special]="special">This is not a very special class</div>
 
-III. Toggle Multiple classes(ngClass directivve)
+III. Toggle Multiple classes(ngClass directive)
 // In component.ts file
 classConditions =  {
   'saveable': this.canSave,
