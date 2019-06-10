@@ -208,7 +208,7 @@ Ex: anchor-tag-bookmark.html
 Images
 - - --
 Different kind of images
-Forur kind of images we use jpeg, png, svg, gif
+Four kind of images we use jpeg, png, svg, gif
 Ex: images.html
 
 Gif loaders: https://loading.io/, http://www.ajaxload.info/ and many other sites available.
