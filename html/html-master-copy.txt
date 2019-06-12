@@ -358,7 +358,7 @@ The class name can also be used by JavaScript to perform certain tasks for eleme
 
 JavaScript can access elements with a specified class name by using the getElementsByClassName() method.
 
-When a user clicks on a button, hide all elements with the class name "city":
+When a user clicks on a button, hide all elements with the class name "cities":
 
 <script>
     function hideCities() {
@@ -374,8 +374,6 @@ id Attribute
 A html page should contain only one element with one id. Having multiple elements with same id is WRONG.
 
 The id attribute specifies a unique id for an HTML element (the value must be unique within the HTML document).
-
-The id value can be used by CSS and JavaScript to perform certain tasks for a unique element with the specified id value.
 
 In CSS, to select an element with a specific id, write a hash (#) character, followed by the id of the element.
 
@@ -426,7 +424,7 @@ An iframe can be used as the target frame for a link.
 The target attribute of the link must refer to the name attribute of the iframe.
 
 <iframe src="demo_iframe.htm" name="iframe_a"></iframe>
-<p><a href="https://www.w3schools.com" target="iframe_a">W3Schools.com</a></p>
+<p><a href="./index.html" target="iframe_a">Index Page</a>></p>
 
 JavaScript
 ----------
@@ -892,8 +890,6 @@ Can we use the definitions to decide how to nest those elements? No, we cannot!
 So, on the Internet, you will find HTML pages with <section> elements containing <article> elements, and <article> elements containing <section> elements.
 
 You will also find pages with <section> elements containing <section> elements, and <article> elements containing <article> elements.
-
-Example for a newspaper: The sport <article> in the sport section, may have a technical section in each <article>.
 
 <header> Element:
 The <header> element specifies a header for a document or section.
