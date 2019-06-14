@@ -627,7 +627,7 @@ The above interpolation gives error: Can't read the property name of null. The v
 
 The non-null assertion operator ( !. )
 --------------------------------------
-When we are using strictNullChecks flag, TypeScript compiler will throw errors even if it can't understand the variable is null or not.
+When we are using strictNullChecks flag, TypeScript compiler will throw errors even if it can't understand whether the variable is null or not.
 
 If we know a variable is won't become null in runtime, then we can explicitly tell the TSC that the variable is not a null.
 
