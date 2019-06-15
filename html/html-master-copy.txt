@@ -431,7 +431,7 @@ JavaScript
 JavaScript makes HTML pages more dynamic and interactive.
 
 <script> Tag:
-The <script> tag is used to define a client-side script (JavaScript).
+The <script> tag is used to include javascript file or script.
 <script src="js/main.js"></script>
 
 OR
@@ -473,8 +473,8 @@ The <base> element specifies the base URL and base target for all relative URLs 
 
 <base href="https://www.w3schools.com/" target="_blank">
 
-HTML Entities
--------------
+HTML Character Entities
+-----------------------
 Some characters are reserved in HTML.
 
 If you use the less than (<) or greater than (>) signs in your text, the browser might mix them with tags.
@@ -495,68 +495,20 @@ A common character entity used in HTML is the non-breaking space: &nbsp;
 
 See the full list of html entities here: https://www.w3schools.com/html/html_entities.asp
 
-	non-breaking space	    &nbsp;	&#160;
-<	less than	            &lt;	&#60;
->	greater than	        &gt;	&#62;
-&	ampersand	            &amp;	&#38;
-"	double quotation mark	&quot;	&#34;
-'	single quotation mark 	&apos;	&#39;
-©	copyright	            &copy;	&#169;
-®	registered trademark	&reg;	&#174;
-
-HTML Encoding (Character Sets)
-------------------------------
-To display an HTML page correctly, a web browser must know which character set (character encoding) to use.
-
-ASCII was the first character encoding standard (also called character set). ASCII defined 128 different alphanumeric characters that could be used on the internet: numbers (0-9), English letters (A-Z), and some special characters like ! $ + - ( ) @ < > .
-
-ANSI (Windows-1252) was the original Windows character set, with support for 256 different character codes.
-
-ISO-8859-1 was the default character set for HTML 4. This character set also supported 256 different character codes.
-
-Because ANSI and ISO-8859-1 were so limited, HTML 4 also supported UTF-8.
-
-UTF-8 (Unicode) covers almost all of the characters and symbols in the world.
-
-The default character encoding for HTML5 is UTF-8.
-
-HTML charset Attribute is specified in the <meta> tag.
-
-<meta charset="UTF-8">
-
-URL Encoding
-------------
-URLs can only be sent over the Internet using the ASCII character-set. If a URL contains characters outside the ASCII set, the URL has to be converted.
-
-URL encoding converts non-ASCII characters into a format that can be transmitted over the Internet.
-
-URL encoding replaces non-ASCII characters with a "%" followed by hexadecimal digits.
-
-URLs cannot contain spaces. URL encoding normally replaces a space with a plus (+) sign, or %20.
-
-In javascript we have encodeURI() and decodeURI() functions.
-
-var uri = "my test.asp?name=ståle&car=saab";
-var res = encodeURI(uri); // my%20test.asp?name=st%C3%A5le&car=saab
-decodeURI(res); // my test.asp?name=ståle&car=saab
+	non-breaking space	   &nbsp;	&#160;
+<	less than	             &lt;	  &#60;
+>	greater than	         &gt;	  &#62;
+&	ampersand	             &amp;	&#38;
+"	double quotation mark	 &quot;	&#34;
+'	single quotation mark  &apos;	&#39;
+©	copyright	             &copy;	&#169;
+®	registered trademark	 &reg;	&#174;
 
 <form> Element
 --------------
 The HTML <form> element defines a form that is used to collect user input. An HTML form contains form elements.
 
 Form elements are different types of input elements, like text fields, checkboxes, radio buttons, submit buttons, and more.
-
-The <input> element can be displayed in several ways, depending on the type attribute.
-<input type="text">	    Defines a one-line text input field
-<input type="radio">	Defines a radio button (for selecting one of many choices)
-<input type="submit">	Defines a submit button (for submitting the form)
-
-Radio buttons let a user select ONE of a limited number of choices.
-<form>
-  <input type="radio" name="gender" value="male" checked> Male<br>
-  <input type="radio" name="gender" value="female"> Female<br>
-  <input type="radio" name="gender" value="other"> Other
-</form>
 
 The form-handler is specified in the form's action attribute.
 <form action="/action_page.php">
@@ -792,6 +744,42 @@ button:
 <button type="submit">Submit</button>
 <button type="reset">Reset</button>
 <button type="button" onclick="alert('Hello World!')">Click Me!</button>
+
+HTML Encoding (Character Sets)
+------------------------------
+To display an HTML page correctly, a web browser must know which character set (character encoding) to use.
+
+ASCII was the first character encoding standard (also called character set). ASCII defined 128 different alphanumeric characters that could be used on the internet: numbers (0-9), English letters (A-Z), and some special characters like ! $ + - ( ) @ < > .
+
+ANSI (Windows-1252) was the original Windows character set, with support for 256 different character codes.
+
+ISO-8859-1 was the default character set for HTML 4. This character set also supported 256 different character codes.
+
+Because ANSI and ISO-8859-1 were so limited, HTML 4 also supported UTF-8.
+
+UTF-8 (Unicode) covers almost all of the characters and symbols in the world.
+
+The default character encoding for HTML5 is UTF-8.
+
+HTML charset Attribute is specified in the <meta> tag.
+
+<meta charset="UTF-8">
+
+URL Encoding
+------------
+URLs can only be sent over the Internet using the ASCII character-set. If a URL contains characters outside the ASCII set, the URL has to be converted.
+
+URL encoding converts non-ASCII characters into a format that can be transmitted over the Internet.
+
+URL encoding replaces non-ASCII characters with a "%" followed by hexadecimal digits.
+
+URLs cannot contain spaces. URL encoding normally replaces a space with a plus (+) sign, or %20.
+
+In javascript we have encodeURI() and decodeURI() functions.
+
+var uri = "my test.asp?name=ståle&car=saab";
+var res = encodeURI(uri); // my%20test.asp?name=st%C3%A5le&car=saab
+decodeURI(res); // my test.asp?name=ståle&car=saab
 
 HTML5
 =====
