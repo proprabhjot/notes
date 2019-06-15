@@ -13,6 +13,9 @@ heroku open
 heroku apps:rename newname
 heroku addons:create mongolab
 
+Managing multiple environments:
+https://devcenter.heroku.com/articles/multiple-environments
+
 git commands:
 -------------
 > git remote - Display list of remotes
