@@ -1,0 +1,29 @@
+Useful Articles
+---------------
+https://devcenter.heroku.com/articles/getting-started-with-nodejs#introduction
+https://devcenter.heroku.com/articles/mongolab
+https://devcenter.heroku.com/articles/mean-apps-restful-api
+
+Commands Used:
+--------------
+heroku create
+git push heroku master
+heroku ps:scale web=1
+heroku open
+heroku apps:rename newname
+heroku addons:create mongolab
+
+git commands:
+-------------
+> git remote - Display list of remotes
+
+> git push heroku master - Push to heroku git repo, local master branch to remote master branch
+
+> git push heroku testbranch:master - Push to heroku git repo, local testbranch to remote master branch
+
+> heroku git:remote -a todos-api-production - To configure existing heroku app to a local git repo. 
+
+
+
+
+
