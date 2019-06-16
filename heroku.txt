@@ -6,12 +6,13 @@ https://devcenter.heroku.com/articles/mean-apps-restful-api
 
 Commands Used:
 --------------
-heroku create
-git push heroku master
-heroku ps:scale web=1
-heroku open
-heroku apps:rename newname
-heroku addons:create mongolab
+> heroku create
+> heroku create --remote qa
+> git push heroku master
+> heroku ps:scale web=1
+> heroku open
+> heroku apps:rename newname
+> heroku addons:create mongolab
 
 Managing multiple environments:
 -------------------------------
