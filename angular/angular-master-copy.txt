@@ -1050,16 +1050,13 @@ Below are the ways Angular provided us to establish communication between compon
 -----------------------------------------------------
 We know this as @Input property binding. We use @Input property binding to pass data from parent component to child component.
 
+Ex: http://localhost:4300/components-templates/template-syntax/custom-events
+
 // In Parent component view.html file
-<app-hero-details [hero]="currentHero"></app-hero-details>
+<app-display-hero [hero]="hero"></app-display-hero>
 
-// In app-hero-details.ts file
+// In display-hero.component.ts file
 @Input() hero;
-
-Under 'Components & Templates' tab '@Input is two-way'
-http://localhost:4200/components-templates/input-test
-
-If we update the value in child component, the value in prent component will also gets update.
 
 Intercept input property changes with a setter:
 -----------------------------------------------
@@ -1080,7 +1077,7 @@ http://localhost:4200/components-templates/template-syntax/custom-events
 // In parent component view.html 
 <app-display-hero (deleteHeroEvent)="delete($event)" [hero]="hero"></app-display-hero>
 
-// In app-display-hero component
+// In display-hero.component.ts file
 @Output() deleteHeroEvent = new EventEmitter();
 
 deleteHero(hero) {
