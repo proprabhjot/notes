@@ -14,7 +14,27 @@ heroku apps:rename newname
 heroku addons:create mongolab
 
 Managing multiple environments:
+-------------------------------
 https://devcenter.heroku.com/articles/multiple-environments
+
+To add a new environment:
+> heroku create --remote qa
+
+After adding qa environment, renaming that qa app
+> heroku apps:rename newName --app oldName
+> heroku apps:rename todos-api-qa --app pacific-woodland-89082
+
+To push the changes to qa
+> git push qa master
+
+To install addon to specific environment
+> heroku addons:create mongolab --remote dev
+OR
+> heroku addons:create mongolab --app todos-api-dev
+
+To remove a remote for that repo
+> git remote rm qa - will remove the qa remote.
+> git remote rm heroku - will remove the default remote heroku.
 
 git commands:
 -------------
@@ -26,7 +46,4 @@ git commands:
 
 > heroku git:remote -a todos-api-production - To configure existing heroku app to a local git repo. 
 
-
-
-
-
+> git remote rm qa - To remove a remote for that repo.
