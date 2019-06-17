@@ -908,14 +908,14 @@ By using 'trackBy' we can avoid the DOM elelment removal and addition until the 
 
 Angular transforms the *ngFor in similar fashion from asterisk (*) syntax to <ng-template> element.
 
-<div *ngFor="let hero of heroes; let i=index; let odd=odd; trackBy: trackById" [class.odd]="odd">
+<div *ngFor="let hero of heroes; let i=index; let odd=odd; trackBy: trackById" [class.dark]="odd">
   ({{i}}) {{hero.name}}
 </div>
 
 The above ngFor will be converted to <ng-template> like below.
 
 <ng-template ngFor let-hero [ngForOf]="heroes" let-i="index" let-odd="odd" [ngForTrackBy]="trackById">
-  <div [class.odd]="odd">({{i}}) {{hero.name}}</div>
+  <div [class.dark]="odd">({{i}}) {{hero.name}}</div>
 </ng-template>
 
 The let keyword declares a template input variable that you reference within the template. The input variables in this example are hero, i, and odd. The parser translates let hero, let i, and let odd into variables named, let-hero, let-i, and let-odd.
@@ -939,7 +939,7 @@ NgSwitch is actually a set of three, cooperating directives: NgSwitch, NgSwitchC
 
 The above switch case will be converted to ng-template like below.
 
-<div [ngSwitch]="hero?.emotion">
+<div [ngSwitch]="currentHero.emotion">
   <ng-template [ngSwitchCase]="'happy'">
     <app-happy-hero [hero]="hero"></app-happy-hero>
   </ng-template>
