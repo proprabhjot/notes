@@ -8,7 +8,10 @@ CSS saves a lot of work. It can control the layout of multiple web pages all at 
 
 Syntax:
 -------
-h1 { color: blue; font-size:12px; }
+h1 { 
+    color: blue; 
+    font-size:12px; 
+}
 
 A CSS rule-set consists of a selector and a declaration block.
 The selector points to the HTML element you want to style.
@@ -165,7 +168,7 @@ h1 { color: red; }
     <link rel="stylesheet" href="style-sheet3.css">
 </head>
 
-If we insert the above 3 style sheets in order, h1 color will become 'red'. Because, the value from the last read style sheet will be used. 
+If we insert the above 3 style sheets in order, h1 color will become 'red'. Because, the value from the last style sheet will be used. 
 
 Cascading Order
 ---------------
