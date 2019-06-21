@@ -1107,7 +1107,7 @@ We can't use the local variable technique if an instance of the parent component
 
 When the parent component class requires that kind of access, access the child component into the parent as a ViewChild.
 
-http://localhost:4200/components-templates/component-interaction -> Parent calls an @ViewChild()
+http://localhost:4200/components-templates/component-interaction -> Using @ViewChild()
 
 In above example,
 - we imported the 'CountdownTimerComponent' in 'app-countdown-parent-with-view-child' component class file.
