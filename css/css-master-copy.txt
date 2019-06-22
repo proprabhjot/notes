@@ -756,6 +756,7 @@ Total element height = height + top padding + bottom padding + top border + bott
 
 Box Sizing
 - - - - --
+Ex: examples/box-model.html
 'box-sizing' property allows us to include the padding and border in an element's total width and height.
 
 The default value of 'box-sizing' property is 'content-box'. We can change it to 'border-box' if required.
