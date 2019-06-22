@@ -1381,17 +1381,7 @@ ngOnDestroy()
 
 HostListener & HostBinding
 ==========================
-'HostListener' is a decorator. Using it we can listen to events on the host element of a directive. Below, is the example of 'appHighlightV2' directive.
-
-http://localhost:4200/components-templates/directives -> Attribute Directives -> appHighlightV2
-
-// Host element
-<p appHighlightV2 [highlightColor]="color">Highlight me in the color specified by component(green)</p>
-
-// In directive Implementaiton file
-@HostListener('mouseenter') onMouseEnter() {
-  this.highlight(this.highlightColor || 'red');
-}
+'HostListener' is a decorator. Using it we can listen to events on the host element of a directive / component.
 
 HostBinding:
 ------------
@@ -1452,9 +1442,9 @@ Our example covers all of these methods.
 
 Register global style files in the styles section of 'angular.json' files.
 
-We can use css pre-processors like sass, less or stylus in our angular application. We have to mention flag in 'ng new' command while creating the app.
+We can use css pre-processors like sass, less or stylus in our angular application. We have to choose while creatting new app.
 
-ng new my-app --style sass
+If we choose scss, while creating component it will create scss files instead of .css files.
 
 EX:
 @Component({
