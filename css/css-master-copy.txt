@@ -1156,7 +1156,7 @@ Setting the display property of an element only changes how the element is displ
 
 inline-block
 - - - - - --
-inline-block elements takes only required width like inline elements and we can apply padding and margins like block level elements.
+By making an inline element to inline-block, we can apply top, bottom margins, paddings and also width and height properties.
 
 .inline-block-demo {
     display: inline-block;
