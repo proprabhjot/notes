@@ -1461,7 +1461,6 @@ Pure and Impure Pipes
 ---------------------
 Pure pipes detect only 
 - changes to the reference value
-- property/variable value change(it's a reference change)
 
 Impure pipes can detect below changes and act upon. 
 - changes to the properties of object(object mutation)
