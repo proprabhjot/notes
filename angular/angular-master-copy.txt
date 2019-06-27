@@ -1548,7 +1548,7 @@ We can create an observable of ajax call using 'ajax' method.
 
 import { ajax } from 'rxjs/ajax';
 
-let todosUrl = 'http://localhost:3000/todos';
+let todosUrl = 'https://todos-api-dev.herokuapp.com/todos';
 const todoObservable = ajax(todosUrl);
 
 todoObservable.subscribe(
@@ -1650,8 +1650,6 @@ Along with all the ways mentioned above, RxJs provides many other methods/operat
 
 Subscribe method & Observer
 ---------------------------
-One observable can be observed by any number of observers. That means, any number of observers can subscribe to an observable.
-
 We can subscribe to an observable using 'subscribe' method.
 
 We need to pass an 'Observer' to 'subscribe' method. 'Observer' is nothing but collection of 'next', 'error' and 'complete' callback functions.
@@ -1659,7 +1657,7 @@ We need to pass an 'Observer' to 'subscribe' method. 'Observer' is nothing but c
 let observer = {
   next: value => console.log(value),
   error: err => console.log(err),
-  complete: () => console.log('done'),
+  complete: () => console.log('done')
 };
 
 let someSubscription = someObservable.subscribe(observer);
@@ -1669,7 +1667,7 @@ We can directly pass the object to subscribe method.
 let someSubscription = someObservable.subscribe({
   next: value => console.log(value),
   error: err => console.log(err),
-  complete: () => console.log('done'),
+  complete: () => console.log('done')
 });
 
 Instead of passing an object, we can directly pass individual callback functions as params to subscribe method.
@@ -1686,7 +1684,7 @@ Unsubscribe
 -----------
 We must unSubscribe to an observable, when we don't want to act on further event notifications.
 
-Every observable provides 'unSubscribe()' method to cancel it's subscription.
+Every observable subscription provides 'unSubscribe()' method to cancel it's subscription.
 
 someSubscription.unSubscribe();
 
