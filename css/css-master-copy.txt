@@ -1156,7 +1156,7 @@ Setting the display property of an element only changes how the element is displ
 
 inline-block
 - - - - - --
-inline-block elements takes only required width like inline elements and we can apply padding and margins like block level elements.
+By making an inline element to inline-block, we can apply top, bottom margins, paddings and also width and height properties.
 
 .inline-block-demo {
     display: inline-block;
@@ -1832,7 +1832,7 @@ Relative Lengths
 - - - - - - - --
 Relative length units specify a length relative to another length property. Relative length units scales better between different rendering mediums.
 
-em 	 Relative to the font-size of the element (2em means 2 times the size of the current font) 		
+em 	 Relative to the font-size of the element (16px) 		
 rem  Relative to font-size of the root element 	
 vw 	 Relative to 1% of the width of the viewport* 	
 vh 	 Relative to 1% of the height of the viewport* 	
