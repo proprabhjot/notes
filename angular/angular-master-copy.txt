@@ -1698,7 +1698,7 @@ Subject
 ---------------------------
 'subject' is a special type of observable. But unlike a regular observable, Subject can also be used to emit values to its subscribers when ever we need.
 
-Ex1: http://localhost:4200/components-templates/component-interaction -> Parent and children communicate via a service
+Ex1: http://localhost:4200/components-templates/component-interaction -> Via a service
 
 Ex2: http://localhost:4200/rxjs/subjects-demo
 
@@ -1760,7 +1760,7 @@ let namesSubject: Subject<string> = new Subject<string>();
 let namesObservable: Observable<string> = from(names);
 
 namesSubject.subscribe(n => {
-  this.namesSubjectLogs.push(`At ${((Date.now() - initTime) / 1000).toFixed(1)} seconds: Observer1: ${n}`)
+  this.namesSubjectLogs.push(`At ${`Observer1: ${n}`)
 });
 
 namesObservable.subscribe(namesSubject);

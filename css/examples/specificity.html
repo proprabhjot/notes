@@ -8,19 +8,23 @@
                 color: #d3d3d3;
             }
 
-            h1 { /* Specificity 1 */
-                color: red;
-                /* color: red !important; */
+            #test-id { /* Specificity 100 */
+                color: blue;
             }
 
             h1.test { /* Specificity 11 */
                 color: green;
             }
+
+            h1 { /* Specificity 1 */
+                /* color: red; */
+                color: red !important; 
+            }         
         </style>
     </head>
     <body>
         <h3><a href="./index.html">&lt;&lt; Back To Home</a></h3>
         
-        <h1 class="test">Test</h1>
+        <h1 class="test" id="test-id">Test</h1>
     </body>
 </html>
