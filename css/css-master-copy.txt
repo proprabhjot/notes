@@ -2346,7 +2346,23 @@ To pull an element to left use margin-right: auto;
 
 Both div 3 and 4 will be pulled to right.
 
-Ex: flexbox-page.html
+Flexbox Summary
+---------------
+The flexbox(parent) properties are:
+1. flex-direction - column, column-reverse, row, row-reverse
+2. flex-wrap - wrap, nowrap, wrap-reverse
+3. flex-flow - flex-direction + flex-wrap
+4. justify-content - center, flex-start, flex-end, space-around, space-between
+5. align-items - center, flex-start, flex-end, stretch, baseline
+6. align-content - Deal with FLEX LINES NOT FLEX ITEMS. space-between, space-around, stretch, center, flex-start, flex-end
+
+The flex item(children) properties are:
+1. order - 1, 2, 3, 4 ...
+2. flex-grow - 1, 2, 3 ...
+3. flex-shrink - 0, 1, 2 ...
+4. flex-basis - 100, 200, 300 ..
+5. flex - flex-grow + flex-shrink + flex-basis 
+6. align-self - center, flex-start, flex-end
 
 Media Queries & Responsive Web Design(RWD)
 ==========================================
