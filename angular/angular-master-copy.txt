@@ -1852,7 +1852,7 @@ let oddFiltered$ = oddFilterFunc(numbersObservable);
 let squareMapFunc = map((val: number) => val * val);
 let oddSquaredNumbers$ = squareMapFunc(oddFiltered$);
 
-oddSquaredNumbers$.subscribe(value => this.oddFilteredLogs.push(value));
+oddSquaredNumbers$.subscribe(value => this.oddSquareLogs1.push(value));
 
 Pipe() method
 ------------- 
@@ -1866,7 +1866,7 @@ let squareOddValsPipeFunc = pipe(
 );
 
 let squareOdd$ = squareOddValsPipeFunc(numbersObservable);
-squareOdd$.subscribe(x => this.squareOddLogs.push(x));
+squareOdd$.subscribe(x => this.oddSquareLogs2.push(x));
 
 The pipe() function is also a method on the RxJS Observable, so we can use it like below for same operation
 
@@ -1875,7 +1875,7 @@ let squaredOddObservable = numbersObservable.pipe(
   map(n => n * n)
 );
 
-squaredOddObservable.subscribe(x => this.squaredOddLogs.push(x));
+squaredOddObservable.subscribe(x => this.oddSquareLogs3.push(x));
 
 Marble Diagrams
 ---------------
