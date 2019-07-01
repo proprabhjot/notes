@@ -2196,6 +2196,9 @@ If we import the feature modules into AppModule then the feature modules will be
 
 Router is responsible for loading lazy modules.
 
+{ path: 'customers', loadChildren: '../customers/customers.module#CustomersModule' },
+{ path: 'orders', loadChildren: '../orders/orders.module#OrdersModule' },
+
 Dependency Injection(DI)
 ========================
 Dependency injection is a coding pattern(design pattern) in which a class receives its dependencies from external sources rather than creating them itself.
