@@ -2430,7 +2430,7 @@ export class LoggerService {
   providedIn: 'root',
 })
 export class UserService {
-  constructor(logger: Logger) { }
+  constructor(logger: LoggerService) { }
 }
 
 Optional dependencies
