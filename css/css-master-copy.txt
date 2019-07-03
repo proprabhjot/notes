@@ -2460,9 +2460,7 @@ Media queries can also be used to change layout of a page depending on the orien
 
 @media only screen and (orientation: portrait) {...}
 
-Ex1: responsive-page.html - Flexbox - Responsive Blog Page
 
-Ex2: flexbox-page.html - Float&Clear - Responsive Blog Page
 
 Viewport meta tag
 -----------------
@@ -2488,6 +2486,10 @@ references:
 https://developers.google.com/web/fundamentals/design-and-ux/responsive/#set-the-viewport
 https://developer.mozilla.org/en-US/docs/Mozilla/Mobile/Viewport_meta_tag
 https://developer.apple.com/library/archive/documentation/AppleApplications/Reference/SafariWebContent/UsingtheViewport/UsingtheViewport.html
+
+Ex1: responsive-page.html - Float&Clear - Responsive Blog Page
+
+Ex2: flexbox-page.html - Flexbox - Responsive Blog Page
 
 Icons
 =====
