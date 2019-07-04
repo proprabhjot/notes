@@ -2460,8 +2460,6 @@ Media queries can also be used to change layout of a page depending on the orien
 
 @media only screen and (orientation: portrait) {...}
 
-
-
 Viewport meta tag
 -----------------
 The browser's viewport is the area of the window in which web content can be seen. This is often not the same size as the rendered page, in which case the browser provides scrollbars for the user to scroll and access all the content.

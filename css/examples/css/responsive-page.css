@@ -31,42 +31,42 @@ body {
   padding: 10px 0px 15px 0px;
 }
 
-.menu .logo-container .logo {
+.header-content .logo-container .logo {
     cursor: pointer;
     font-size: 23px;
 }
 
-.menu .logo-container, .menu .nav-links-container {
+.header-content .logo-container, .header-content .nav-links-container {
     width: 50%;
     float: left;
 }
 
-.menu .nav-links-container {
+.header-content .nav-links-container {
     text-align: right;
 }
 
-.menu .nav-links-container ul{
+.header-content .nav-links-container ul{
     list-style: none;
     margin: 0px;
     padding-top: 7px;
 }
 
-.menu .nav-links-container ul li{
+.header-content .nav-links-container ul li{
     display: inline-block;
     padding-right: 25px;
 }
 
-.menu .nav-links-container ul li:last-child{
+.header-content .nav-links-container ul li:last-child{
     padding-right: 0px;
 }
 
-.menu .nav-links-container ul li a{
+.header-content .nav-links-container ul li a{
     text-decoration: none;
     color: #ffffff;
     opacity: 0.7;
 }
 
-.menu .nav-links-container ul li a:hover{
+.header-content .nav-links-container ul li a:hover{
     opacity: 1;
 }
 
@@ -151,13 +151,13 @@ body {
         width: 100%;
     }
 
-    .menu .logo-container, .menu .nav-links-container {
+    .header-content .logo-container, .header-content .nav-links-container {
         width: 100%;
         float: none;
         text-align: center;
     }
 
-    .menu .nav-links-container {
+    .header-content .nav-links-container {
         padding-top: 6px;
     }
 
@@ -186,12 +186,12 @@ body {
         width: 100%;
      }
 
-    .menu .logo-container {
+    .header-content .logo-container {
         width: 33.5%;
         padding-left: 1.5%;
     }
 
-    .menu .nav-links-container {
+    .header-content .nav-links-container {
         width: 63.5%;
         padding-right: 1.5%;
     }
@@ -213,16 +213,16 @@ body {
  
  /* Medium devices (landscape tablets, 768px and up) */
  @media only screen and (min-width: 768px) {
-    .menu .logo-container, .menu .nav-links-container {
+    .header-content .logo-container, .header-content .nav-links-container {
         width: 48.5%;
         float: left;
     }
 
-    .menu .logo-container {
+    .header-content .logo-container {
         padding-left: 1.5%;
     }
 
-    .menu .nav-links-container {
+    .header-content .nav-links-container {
         padding-right: 1.5%;
     }
  }
@@ -256,7 +256,7 @@ body {
         margin: auto;
     }
 
-    .menu .logo-container, .menu .nav-links-container {
+    .header-content .logo-container, .header-content .nav-links-container {
         padding: 0px; 
         width: 50%;
         float: left; 
