@@ -2517,15 +2517,50 @@ A CSS preprocessor is a program that has it's own syntax and generates css on co
 
 There are many CSS preprocessors like sass, less, stylus etc...
 
-Most CSS preprocessors will add some features that don't exist in pure CSS, such as mixin, nesting selector, inheritance selector, and so on. These features make the CSS structure more readable and easier to maintain.
+Most CSS preprocessors will add some features that don't exist in pure CSS, such as variables, mixin, nesting selector, inheritance selector, and so on. These features make the CSS structure more readable and easier to maintain.
 
 SASS
 ----
 https://sass-lang.com/
 
-Sass stands for Syntactically Awesome StyleSheets.
+Sass supports two different syntaxes. .SCSS and .SASS
 
-Sass is the most mature, stable, and powerful CSS extension language.
+Sass stands for Syntactically Awesome StyleSheets. This is OLDER Syntax. It uses indentation rather than brackets to indicate nesting of selectors, and newlines rather than semicolons to separate properties.
+
+nav
+  ul
+    margin: 0
+    padding: 0
+    list-style: none
+
+  li
+    display: inline-block
+
+  a
+    display: block
+    padding: 6px 12px
+    text-decoration: none
+
+
+Scss stands for Sassy CSS. It is new syntax of sass. It's syntax is almost similar to CSS syntax.
+
+nav {
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  li { display: inline-block; }
+
+  a {
+    display: block;
+    padding: 6px 12px;
+    text-decoration: none;
+  }
+}
+
+As .scss is the new syntax, most of the programmers/developers use .scss extension. 
 
 Installation
 ------------
