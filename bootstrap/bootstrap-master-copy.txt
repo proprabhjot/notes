@@ -64,8 +64,9 @@ Responsive breakpoints
 ----------------------
 Bootstrap primarily uses the following media query ranges / breakpoints.
 
-// Extra small devices (portrait phones, less than 576px)
-// No media query for `xs` since this is the default in Bootstrap
+// Extra small devices (portrait phones, less than 576px).
+// No media query for `xs` since this is the default in Bootstrap. 
+// No media query like @media (min-width: 0px) { ... } which covers 0-575px ranage. This is the default range for bootstrap. So, all the open styles / global styles target this range.
 
 // Small devices (landscape phones, 576px and up)
 @media (min-width: 576px) { ... }
