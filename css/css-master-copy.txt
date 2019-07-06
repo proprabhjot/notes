@@ -2569,14 +2569,17 @@ npm install -g sass
 To run Sass from the command line, just use
 
 > sass input.scss output.css
+> sass sass/variables-demo.scss:css/compiled/variables-demo.css
 
 You can also tell Sass to watch the file and update the CSS every time the Sass file changes:
 
 > sass --watch input.scss:output.css
+> sass --watch sass/variables-demo.scss:css/compiled/variables-demo.css
 
 If you have a directory with many Sass files, you can also tell Sass to watch the entire directory:
 
 > sass --watch app/sass:public/stylesheets
+> sass --watch sass:css/compiled 
 
 Variables
 ---------
@@ -2698,35 +2701,89 @@ Using @extend lets you share a set of CSS properties from one selector to anothe
     border-color: yellow;
 }
 
-What the above code does is tells .message, .success, .error, & .warning to behave just like %message-shared. That means anywhere that %message-shared shows up, .message, .success, .error, & .warning will too. The magic happens in the generated CSS, where each of these classes will get the same CSS properties as %message-shared. This helps us to avoid having to write multiple class names on HTML elements.
+The main difference b/w mixin and inheri is, Mixin repeat the code where ever we include it.
+But, inheritance don't repeat the code, It group the selectors and apply the common code to some set of classes. The output for the above scss file will be like below.
 
-Note that the CSS in %equal-heights isn't generated, because %equal-heights is never extended anywhere.
+.message, .success, .error, .warning {
+  border: 1px solid #ccc;
+  padding: 10px;
+  color: #333; }
+
+.success {
+  border-color: green; }
+
+.error {
+  border-color: red; }
+
+.warning {
+  border-color: yellow; }
+
+If we use mixins here, the code would be like below.
+
+.message {
+  border: 1px solid #ccc;
+  padding: 10px;
+  color: #333; }
+
+.success {
+  border: 1px solid #ccc;
+  padding: 10px;
+  color: #333;
+  border-color: green; }
+
+.error {
+  border: 1px solid #ccc;
+  padding: 10px;
+  color: #333;
+  border-color: red; }
+
+.warning {
+  border: 1px solid #ccc;
+  padding: 10px;
+  color: #333;
+  border-color: yellow; }
+
+Note that the CSS in %equal-heights isn't generated in output file, because %equal-heights is never extended anywhere.
 
 Operators
 ---------
 Sass has a handful of standard math operators like +, -, *, /, and %. 
 
-.sass VS .scss
---------------
-.sass is extension of older versions of sass. Which is having different syntax without braces.
+Along with the above mentioned sass basics, it provides many other feature like if else statements etc.. Please go through the docs.
 
-$font-stack:    Helvetica, sans-serif
-$primary-color: #333
-
-body
-  font: 100% $font-stack
-  color: $primary-color
-
-.scss is extension of latest version of sass.
-
-$font-stack:    Helvetica, sans-serif;
+SASS Syntaxes Symmary
+---------------------
+1. variable - $ symbol
+- - - - - - - - - - -
 $primary-color: #333;
 
 body {
-  font: 100% $font-stack;
   color: $primary-color;
 }
 
-Along with the above mentioned sass basics, it provides many other feature like if else statements etc.. Please go through the docs.
+2. '_' before file name makes it a partial. Ex: _reset.scss
 
-Ex: creative-agency-sassy.html
+3. @mixin - @include
+- - - - - - - - - --
+@mixin background-gradient($color1, $color2) {
+    ....
+}
+
+.offer {
+    @include background-gradient(#908ced, #b172e8);
+    ....
+} 
+
+4. %name - @extend
+- - - - - - - - --
+%message-shared {
+    ....
+}
+
+.success {
+    @extend %message-shared;
+    border-color: green;
+}
+
+Ex1: flexbox-page-sassy.html
+Ex2: creative-agency-sassy.html
