@@ -2517,7 +2517,7 @@ A CSS preprocessor is a program that has it's own syntax and generates css on co
 
 There are many CSS preprocessors like sass, less, stylus etc...
 
-Most CSS preprocessors will add some features that don't exist in pure CSS, such as variables, mixin, nesting selector, inheritance selector, and so on. These features make the CSS structure more readable and easier to maintain.
+Most CSS preprocessors have some features that don't exist in pure CSS, such as variables, mixin, nesting selector, inheritance selector, and so on. These features make the CSS structure more readable and easier to maintain.
 
 SASS
 ----
@@ -2560,7 +2560,7 @@ nav {
   }
 }
 
-As .scss is the new syntax, most of the programmers/developers use .scss extension. 
+As .scss is the new syntax, most of the projects/developers use .scss extension. 
 
 Installation
 ------------
@@ -2701,8 +2701,7 @@ Using @extend lets you share a set of CSS properties from one selector to anothe
     border-color: yellow;
 }
 
-The main difference b/w mixin and inheri is, Mixin repeat the code where ever we include it.
-But, inheritance don't repeat the code, It group the selectors and apply the common code to some set of classes. The output for the above scss file will be like below.
+The main difference b/w mixin and inheritance is, Mixin repeat/copy the code where ever we include it. But, inheritance don't repeat the code, It group the selectors and apply the common code to some set of classes. The output for the above scss file will be like below.
 
 .message, .success, .error, .warning {
   border: 1px solid #ccc;
