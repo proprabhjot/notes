@@ -2786,3 +2786,5 @@ body {
 
 Ex1: flexbox-page-sassy.html
 Ex2: creative-agency-sassy.html
+
+.map files are used to debug sass in browser developer tools.
