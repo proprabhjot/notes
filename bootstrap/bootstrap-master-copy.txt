@@ -91,11 +91,11 @@ Bootstrap’s grid system uses a series of containers, rows, and columns to layo
 > Number of columns in grid are 12.
 
 Below are class prefixes for each breakpoint.
-- Extra small   -   <576px    -   .col-*       -   .col-2 occupies two columns on extra small devices
-- Small         -   ≥576px    -   .col-sm-*    -   .col-sm-2 occupies two columns on small devices
-- Medium        -   ≥768px    -   .col-md-*    -   .col-md-2 occupies two columns on medium devices
-- Large         -   ≥992px    -   .col-lg-*    -   .col-lg-2 occupies two columns on large devices
-- Extra Large   -   ≥1200px   -   .col-xl-*    -   .col-xl-2 occupies two columns on extra large devices
+- Extra small   -   >0px      -   .col-*       -   .col-2 occupies two columns on extra small devices(which have min-width 0px or more)
+- Small         -   ≥576px    -   .col-sm-*    -   .col-sm-2 occupies two columns on small devices(which have min-width 576px or more)
+- Medium        -   ≥768px    -   .col-md-*    -   .col-md-2 occupies two columns on medium devices(which have min-width 768px or more)
+- Large         -   ≥992px    -   .col-lg-*    -   .col-lg-2 occupies two columns on large devices(which have min-width 992px or more)
+- Extra Large   -   ≥1200px   -   .col-xl-*    -   .col-xl-2 occupies two columns on extra large devices(which have min-width 1200px or more)
 
 * - number of columns
 
