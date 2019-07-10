@@ -2415,7 +2415,6 @@ To avoid that, we can do below,
 1. Use forRoot() method in 'CounterOneModule'.
 2. Remove 'CountingService' from 'CounterOneModule' and provide it in 'AppModule'. But, registering too many providers in 'AppModule' is not a good thing. So, seperate the providers and put them in 'CoreModule'.  
 
-
 One Service can be injected into another Service.
 // Logger Service
 @Injectable({
@@ -2517,6 +2516,8 @@ Tree-shaking means identifying the un-used code and excluding it from build.
 
 services provided at the NgModule or component level are not tree-shakable.
 
+import { UserService } from './user-service.ts';
+
 @NgModule({
   providers: [UserService]
 })
@@ -2609,7 +2610,7 @@ There are two main kinds of entry components:
 
 @NgModule decorator has an entryComponents array, most of the time you won't have to explicitly set any entry components because Angular adds components listed in @NgModule.bootstrap and those in route definitions to entry components automatically. 
 
-If your app happens to bootstrap or dynamically load a component by type imperatively, you must add it to entryComponents explicitly.
+If your app happens to bootstrap or dynamically load a component imperatively, you must add it to entryComponents explicitly.
 
 For production apps you want to load the smallest code possible. The code should contain only the classes that you actually need and exclude components that are never used. For this reason, the Angular compiler only generates code for components which are reachable from the entryComponents; This means that adding more references to @NgModule.declarations does not imply that they will necessarily be included in the final bundle.
 
@@ -2617,7 +2618,7 @@ In fact, many libraries declare and export components you'll never use. For exam
 
 If a component isn't an entry component and isn't found in a template, the tree shaker will throw it away. So, it's best to add only the components that are truly entry components to help keep your app as trim as possible.
 
-A component loaded declaratively via its selector(tag) is not an entry component. AppComponent contains selector in index.html. But,  AppComponent is an entry component. Because, index.html isn't a component template.
+A component loaded declaratively via its selector(tag) is not an entry component. AppComponent contains selector in index.html. But, AppComponent is an entry component. Because, index.html isn't a component template.
 
 SharedModule
 ------------
