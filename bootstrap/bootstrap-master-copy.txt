@@ -91,11 +91,11 @@ Bootstrap’s grid system uses a series of containers, rows, and columns to layo
 > Number of columns in grid are 12.
 
 Below are class prefixes for each breakpoint.
-- Extra small   -   >0px      -   .col-*       -   .col-2 occupies two columns on extra small devices(which have min-width 0px or more)
-- Small         -   ≥576px    -   .col-sm-*    -   .col-sm-2 occupies two columns on small devices(which have min-width 576px or more)
-- Medium        -   ≥768px    -   .col-md-*    -   .col-md-2 occupies two columns on medium devices(which have min-width 768px or more)
-- Large         -   ≥992px    -   .col-lg-*    -   .col-lg-2 occupies two columns on large devices(which have min-width 992px or more)
-- Extra Large   -   ≥1200px   -   .col-xl-*    -   .col-xl-2 occupies two columns on extra large devices(which have min-width 1200px or more)
+- Extra small   -   >0px      -   .col-*       -   .col-2 occupies two columns on extra small devices
+- Small         -   ≥576px    -   .col-sm-*    -   .col-sm-2 occupies two columns on small devices
+- Medium        -   ≥768px    -   .col-md-*    -   .col-md-2 occupies two columns on medium devices
+- Large         -   ≥992px    -   .col-lg-*    -   .col-lg-2 occupies two columns on large devices
+- Extra Large   -   ≥1200px   -   .col-xl-*    -   .col-xl-2 occupies two columns on extra large devices
 
 * - number of columns
 
@@ -165,18 +165,9 @@ col-auto, col-sm-auto, col-md-auto, col-lg-auto, col-xl-auto
     </div>
 </div>
 
-No gutters
-----------
-The gutters between columns in our predefined grid classes can be removed with .no-gutters. This removes the negative margins from .row and the horizontal padding from all immediate children columns.
-
-<div class="row no-gutters">
-  <div class="col-12 col-sm-6 col-md-8">.col-12 .col-sm-6 .col-md-8</div>
-  <div class="col-6 col-md-4">.col-6 .col-md-4</div>
-</div>
-
 Offsetting columns
 ------------------
-Move columns to the right using .offset-md-* classes. These classes increase the left margin of a column by * columns.
+Move columns to the right using .offset-* classes. These classes increase the left margin of a column by * columns.
 
 <div class="container">
   <div class="row">
@@ -192,9 +183,6 @@ Move columns to the right using .offset-md-* classes. These classes increase the
   </div>
 </div>
 
-Utilities
----------
-https://getbootstrap.com/docs/4.3/utilities/borders/
 
 Content
 -------
@@ -203,3 +191,7 @@ https://getbootstrap.com/docs/4.3/content/reboot/
 Components
 ----------
 https://getbootstrap.com/docs/4.3/components/alerts/
+
+Utilities
+---------
+https://getbootstrap.com/docs/4.3/utilities/borders/
