@@ -1,0 +1,44 @@
+@font-face {
+    font-family: 'Poppins';
+    src: url('../fonts/poppins/Poppins-Regular.ttf')  format('truetype');
+}
+
+@font-face {
+    font-family: 'Poppins-semibold';
+    src: url('../fonts/poppins/Poppins-SemiBold.ttf')  format('truetype');
+}
+
+@font-face {
+    font-family: 'Poppins-bold';
+    src: url('../fonts/poppins/Poppins-Bold.ttf')  format('truetype');
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+.mini-header {
+    background-color: #207DFF;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 400;
+    padding: 6px 0px;
+}
+
+.mini-header .sign-links {
+    text-transform: uppercase;
+}
+
+.mini-header .sign-links span {
+    padding: 0px 8px;
+}
+
+.mini-header .sign-links span:last-child {
+    border-left: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.main-header {
+    height: 700px;
+    background-image: url('../mediplus/images/bg_3.jpg');
+    background-size: 100%;
+}
