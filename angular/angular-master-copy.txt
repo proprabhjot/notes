@@ -2929,7 +2929,7 @@ We can build forms using form specific directives in templates.
 
 To work with template driven froms we need to import 'FormsModule' into 'AppModule'.
 
-import { FormsModule }   from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   imports: [
