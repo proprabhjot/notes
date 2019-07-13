@@ -2506,9 +2506,7 @@ I recommend reading CSS in w3schools. It is the best and simple site for html & 
 
 Templates
 =========
-https://colorlib.com/wp/template/drcare/
-https://colorlib.com/wp/template/creative-agency-2/
-https://www.free-css.com/free-css-templates/page237/varsity
+https://colorlib.com/wp/templates/
 
 
 CSS Preprocessors
