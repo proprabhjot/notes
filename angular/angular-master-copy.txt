@@ -2985,8 +2985,6 @@ The control has been visited. 	  ng-touched 	    ng-untouched
 The control's value has changed. 	ng-dirty 	      ng-pristine
 The control's value is valid. 	  ng-valid 	      ng-invalid
 
-To show/hide the error message, we set message <div> element's hidden property.
-
 We can access the form controls using 'heroForm' template ref variable.
 
 <form (ngSubmit)="onSubmit(heroForm)" #heroForm="ngForm">
