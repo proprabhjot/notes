@@ -13,6 +13,16 @@
     src: url('../fonts/poppins/Poppins-Bold.ttf')  format('truetype');
 }
 
+@font-face {
+    font-family: 'Poppins-extra-bold';
+    src: url('../fonts/poppins/Poppins-ExtraBold.ttf')  format('truetype');
+}
+
+@font-face {
+    font-family: 'Poppins-black';
+    src: url('../fonts/poppins/Poppins-Black.ttf')  format('truetype');
+}
+
 body {
     font-family: 'Poppins', sans-serif;
 }
@@ -34,6 +44,10 @@ body {
 }
 
 .mini-header .sign-links span:last-child {
+    padding-right: 0px;
+}
+
+.mini-header .sign-links span:last-child {
     border-left: 1px solid rgba(255, 255, 255, 0.2);
 }
 
@@ -41,4 +55,82 @@ body {
     height: 700px;
     background-image: url('../mediplus/images/bg_3.jpg');
     background-size: 100%;
+}
+
+.main-header .logo-nav-holder {
+    background-color: rgba(255, 255, 255, 0.5);
+    color: #000000;
+}
+
+.main-header .logo-nav-holder .navbar-collapse .nav-item {
+    padding: 12px 18px 0px 18px;
+}
+
+.main-header .logo-nav-holder .navbar-collapse .nav-item:last-child {
+    padding: 13px 20px;
+    text-align: center;
+    background: #fe5f55;
+    border-radius: 5px;
+}
+
+.main-header .logo-nav-holder .navbar-collapse .nav-item:last-child:hover {
+    background: #207DFF;
+}
+
+.main-header .logo-nav-holder .navbar-collapse .nav-item:last-child a {
+    padding: 0px !important;
+    color: #ffffff;
+    font-size: 12px;
+}
+
+.main-header .logo-nav-holder .navbar-collapse .nav-item:last-child a:hover{
+    border-bottom: 0px solid #207DFF;
+    margin-bottom: 0px;
+}
+
+.main-header .logo-nav-holder .navbar-collapse .nav-item a {
+    color: #000000;
+    font-size: 16px;
+}
+
+.main-header .logo-nav-holder .navbar-collapse .nav-item a.nav-link {
+    padding: 0px;
+    padding-bottom: 5px;
+}
+
+.main-header .logo-nav-holder .navbar-collapse .nav-item a:hover{
+    border-bottom: 2px solid #207DFF;
+    margin-bottom: -2px;
+}
+
+.main-header .logo-nav-holder .navbar a.navbar-brand {
+    color: #000000;
+    font-family: 'Poppins-black', sans-serif;
+    font-size: 24px;
+}
+
+.header-content {
+    padding: 80px 15px;
+}
+
+.header-content p.welcome {
+    color: #207DFF;
+    font-family: 'Poppins-semibold', sans-serif;
+    font-size: 12px;
+    letter-spacing: 2px;
+}
+
+.header-content h1.we-here {
+    font-family: 'Poppins-black', sans-serif;
+    font-size: 60px;
+}
+
+.header-content p.main-desc {
+    color: rgba(0, 0, 0, 0.5);
+    font-size: 17px;
+    line-height: 30px;
+}
+
+.header-content .appointment-btn {
+    font-size: 14px;
 }
