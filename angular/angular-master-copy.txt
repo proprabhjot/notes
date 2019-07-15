@@ -2124,7 +2124,7 @@ Using 'retry' operator, we can retry a failed request for number of times.
 -------------
 Using switchMap we can flaten the observable nested in another observable.
 We can avoid nested subscriptions. 
-switchMap can cancel on going http calls, if new call occur.
+Also, switchMap can cancel on going http calls, if new call occur.
 
 let searchBox = document.getElementById('search-box');
 this.search$ = fromEvent(searchBox, 'input').pipe(

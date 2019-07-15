@@ -52,7 +52,7 @@ body {
 }
 
 .main-header {
-    height: 700px;
+    height: 600px;
     background-image: url('../mediplus/images/bg_3.jpg');
     background-size: 100%;
 }
@@ -133,4 +133,73 @@ body {
 
 .header-content .appointment-btn {
     font-size: 14px;
+}
+
+.about-text {
+    padding-top: 100px;
+    padding-left: 95px !important;
+    padding-bottom: 100px;
+}
+
+.bolder-text {
+    font-family: 'Poppins-black', sans-serif;
+}
+
+.blue-text {
+    color: #207DFF;
+}
+
+.about-img {
+    background-image: url('../mediplus/images/about.jpg');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+.about-text p {
+    font-size: 17px;
+    color: #999999;
+    line-height: 30px;
+}
+
+.contact-buttons .appointment-btn {
+    font-size: 15px;
+}
+
+.contact-buttons .appointment-btn.contact {
+    background: #fe5f55;
+    border: 1px solid #fe5f55;
+}
+
+.contact-buttons .appointment-btn.contact:hover {
+    background: transparent;
+    color: #fe5f55;
+}
+
+.services-holder {
+    background: #F8F9FA;
+}
+
+.consultation-form {
+    background: #ffffff;
+}
+
+.mediplus-media {
+    padding-right: 10px;
+}
+
+.mediplus-media .icon {
+    width: 75Px;
+    text-align: center;
+    height: 75px;
+    background: rgba(254, 95, 85, 0.2);
+    color: #fe5f55;
+    font-size: 35px;
+    border-radius: 50%;
+    padding-top: 13px;
+}
+
+.mediplus-media .media-body p {
+    color: #999999;
+    line-height: 27px;
+    margin-top: 15px;
 }
