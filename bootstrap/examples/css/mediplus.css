@@ -203,3 +203,91 @@ body {
     line-height: 27px;
     margin-top: 15px;
 }
+
+.consultation-form {
+    padding: 50px;
+}
+
+.consultation-form .appointment-btn {
+    background: #fe5f55;
+    border: 1px solid #fe5f55;
+    font-size: 15px;
+}
+
+.consultation-form .appointment-btn:hover {
+    background: transparent;
+    color: #fe5f55;
+}
+
+.consultation-form h6 {
+    font-family: Poppins-semibold;
+    letter-spacing: 2px;
+}
+
+.consultation-form .form-control:focus {
+    box-shadow: none;
+    border-color: #ced4da;
+}
+
+.consultation-form input, 
+.consultation-form select {
+    height: 58px;
+}
+
+.consultation-form textarea {
+    height: 80px;
+    min-height: 80px;
+    max-height: 80px;
+}
+
+.consultation-form .input-group input {
+    border-right: none;
+    border-top-right-radius: 0px !important;
+    border-bottom-right-radius: 0px !important;
+}
+
+.consultation-form .input-group .input-group-append .input-group-text {
+    background: none;
+    border-top-right-radius: 50rem;
+    border-bottom-right-radius: 50rem;
+}
+
+.highlight-section {
+    background: url('../mediplus/images/bg_2.jpg');
+    padding-top: 150px;
+    padding-bottom: 150px;
+    background-position: -50px;
+}
+
+.highlight-section h1 {
+    color: #ffffff;
+    font-size: 50px;
+}
+
+.highlight-section p {
+    color: rgba(255, 255, 255, 0.8);
+    margin-top: 20px;
+}
+
+.highlight-section button {
+    background-color: white;
+    color: #000000;
+    border: #ffffff;
+    font-size: 15px;
+}
+
+.highlight-section button:hover {
+    background-color: white;
+    color: #000000;
+}
+
+.overlay {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0px;
+    background: #000000;
+}
