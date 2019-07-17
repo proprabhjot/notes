@@ -257,6 +257,7 @@ body {
     padding-top: 150px;
     padding-bottom: 150px;
     background-position: -50px;
+    position: relative;
 }
 
 .highlight-section h1 {
@@ -290,4 +291,76 @@ body {
     bottom: 0;
     right: 0px;
     background: #000000;
+    opacity: 0.2;
+}
+
+.one-doctor .doc-img {
+    position: relative;
+}
+
+.one-doctor .doc-img .doc-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: #ffffff;
+    opacity: 0;
+    -webkit-transition: opacity 0.3s ease, margin-top 0.3s ease; /* Safari */
+    transition: opacity 0.3s ease, margin-top 0.3s ease;
+}
+
+.one-doctor:hover .doc-img .doc-overlay {
+    opacity: 0.3;
+    margin-top: -15px;
+}
+
+.one-doctor .doc-img .img-footer {
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+    background: #ffffff;
+    color: #fe5f55;
+    padding: 15px 0px;
+    letter-spacing: 5px;
+    display: none;
+    -webkit-transition: display 0.3s ease; /* Safari */
+    transition: display 0.3s ease;
+}
+
+.one-doctor:hover .doc-img .img-footer {
+    display: block;
+}
+
+.one-doctor .doc-img img {
+    max-width: 100%;
+    -webkit-transition: margin-top 0.3s ease, margin-bottom 0.3s ease; /* Safari */
+    transition: margin-top 0.3s ease, margin-bottom 0.3s ease;
+}
+
+.one-doctor:hover .doc-img img {
+    margin-top: -15px;
+    margin-bottom: 15px;
+}
+
+.one-doctor h3.doc-name {
+    font-size: 24px;
+    margin: 20px 0px 10px 0px;
+}
+
+.one-doctor .doc-study {
+    margin-bottom: 10px;
+    font-family: Poppins-semibold;
+    font-size: 12px;
+    letter-spacing: 3px;
+}
+
+.one-doctor .about {
+    font-size: 17px;
+    color: #999999;
+}
+
+.one-doctor:hover h3.doc-name {
+    color: #207DFF;
 }
