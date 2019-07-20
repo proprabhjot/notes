@@ -52,9 +52,10 @@ body {
 }
 
 .main-header {
-    height: 600px;
     background-image: url('../mediplus/images/bg_3.jpg');
-    background-size: 100%;
+    background-size: 100% 100%;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 .main-header .logo-nav-holder {
@@ -109,10 +110,6 @@ body {
     font-size: 24px;
 }
 
-.header-content {
-    padding: 80px 15px;
-}
-
 .header-content p.welcome {
     color: #207DFF;
     font-family: 'Poppins-semibold', sans-serif;
@@ -120,10 +117,7 @@ body {
     letter-spacing: 2px;
 }
 
-.header-content h1.we-here {
-    font-family: 'Poppins-black', sans-serif;
-    font-size: 60px;
-}
+
 
 .header-content p.main-desc {
     color: rgba(0, 0, 0, 0.5);
@@ -136,9 +130,15 @@ body {
 }
 
 .about-text {
-    padding-top: 100px;
-    padding-left: 95px !important;
-    padding-bottom: 100px;
+    padding-top: 10px;
+    padding-left: 0px !important;
+    padding-bottom: 10px;
+}
+
+.about-text h1.bolder-text {
+    font-family: 'Poppins-bold', sans-serif;
+    font-size: 30px;
+    margin-top: 10px;
 }
 
 .bolder-text {
@@ -153,6 +153,7 @@ body {
     background-image: url('../mediplus/images/about.jpg');
     background-repeat: no-repeat;
     background-size: 100% 100%;
+    min-height: 300px;
 }
 
 .about-text p {
@@ -490,4 +491,13 @@ body {
 .footer .bottom-line {
     text-align: center;
     color: #999999;
+}
+
+.header-content {
+    padding: 50px 15px 40px 15px;
+}
+
+.header-content h1.we-here {
+    font-size: 40px;
+    font-family: 'Poppins-bold', sans-serif;
 }
