@@ -389,6 +389,7 @@ body {
     font-size: 15px;
     background-color: #fe5f55;
     border: 1px solid #fe5f55;
+    width: 100%;
 }
 
 .hospital-track .appointment-btn:hover {
@@ -398,7 +399,7 @@ body {
 
 .hospital-track .left-section h1 {
     font-family: 'Poppins-black';
-    font-size: 50px;
+    font-size: 30px;
 }
 
 .hospital-track .left-section p {
@@ -407,15 +408,15 @@ body {
     letter-spacing: 3px;
 }
 
-.hospital-track .right-section .col-6 {
-    border-color: #ffffff42 !important;
+.hospital-track .right-section .col-12 {
+    border-bottom: 1px solid #ffffff42;
 }
 
-.hospital-track .right-section .col-6 h1 {
+.hospital-track .right-section .col-12 h1 {
     font-family: 'Poppins-black';
 }
 
-.hospital-track .right-section .col-6 h4 {
+.hospital-track .right-section .col-12 h4 {
     font-weight: bold;
     font-size: 15px;
     letter-spacing: 1px;
