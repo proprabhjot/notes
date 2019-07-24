@@ -136,8 +136,55 @@ jQuery Effects
 --------------
 hide(), show() and toggle()
 - - - - - - - - - - - - - -
+$('#hide-demo').hide();
+$('#hide-demo').hide(1000);
+$('#hide-demo').hide(1000, function(){
+    alert('Div hidden...!');
+});
 
+speed and callback are optional parameters. Available for all three methods.
 
+fadeIn(), fadeOut(), fadeToggle() and fadeTo()
+- - - - - - - - - - - - - - - - - - - - - - -
+$('#fadeIn-demo').fadeIn();
+$('#fadeIn-demo').fadeIn(2000);
+$('#fadeIn-demo').fadeIn(2000, function() {
+    alert('Div fadeIn completed..!');
+});
+
+$('#fadeOut-demo').fadeOut();
+
+$('#fadeToggle-demo').fadeToggle();
+
+$('#fadeTo-demo').fadeTo(1000, 0.1);
+
+slideDown(), slideUp() and slideToggle()
+- - - - - - - - - - - - - - - - - - - -
+$('#slideDown-demo').slideDown();
+$('#slideDown-demo').slideDown(2000);
+$('#slideDown-demo').slideDown(2000, function() {
+    alert('Div slideDown completed..!');
+});
+
+$('#slideUp-demo').slideUp();
+
+$('#slideToggle-demo').slideToggle();
+
+animate() method
+- - - - - - - -
+$('#animate-demo').animate({
+    width: '400px',
+    left: '250px'
+});
+
+Method chaining
+- - - - - - - -
+We can call one jQuery method after another.
+
+$('#chaining-demo').slideUp(1000).slideDown(1000);
+
+HTML & CSS Manipulation Methods
+-------------------------------
 
 
 
