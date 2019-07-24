@@ -3623,7 +3623,7 @@ Current Url: http://localhost:4200/users/5
 
 On Clicking <a routerLink="/home">SimpleKart</a>, we will go to http://localhost:4200/home
 
-So, slash cleared the everything after domain(http://localhost:4200) and started the give path.
+So, slash cleared the everything after domain(http://localhost:4200) and start the given path.
 
 Dot Slash case(./)
 - - - - - - - - - -
@@ -3764,7 +3764,7 @@ Using route guards we can prevent un-authorized access of routes.
 
 If the route gruard returns true, the navigation process continues. If it return false, navigation process stops and the user stays in the same page. We can redirect the user from route guard to someother route in the false case.
 
-Below are the route interfaces provided by RouterModule:
+Below are the route gruard interfaces provided by RouterModule:
 
 CanActivate - to mediate navigation to a route.
 CanActivateChild - to mediate navigation to a child route.
