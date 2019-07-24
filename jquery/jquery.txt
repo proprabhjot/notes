@@ -84,9 +84,58 @@ $("a[target='_blank']").hide();
 
 Events
 ------
+Using jQuery we can bind events to DOM elements easily.
 
+Ex: events.html
 
+$("p").click(function(){
+  // action goes here!!
+});
 
+The above code binds click event to all 'p' elements in page.
+
+jQuery have methods for all the common events like click, dblclick, keydown, keypress, mousemove etc...
+
+// dblclick
+$("#dblclick-demo").dblclick(function(){
+    alert('Double clicked on div');
+});
+
+// mouseenter
+$("#mouseenter-demo").mouseenter(function(){
+    alert("You entered div!");
+});
+
+// mouseleave
+$("#mouseleave-demo").mouseleave(function(){
+    alert("You left from the div");
+});
+
+on() Method
+- - - - - - 
+We can bind events to the elements using 'on()' method as well.
+
+$('#on-method-demo').on('click', function() {
+  alert('Clicked on ' + $(this).text());
+});
+
+// Attaching multiple events using on method
+$('#on-method-demo2').on({
+  'mouseenter': function() {
+      $(this).css("background-color", "lightgray");
+  },
+  'mouseleave': function() {
+      $(this).css("background-color", "lightblue");
+  },
+  'click': function() {
+      $(this).css("background-color", "yellow");
+  },
+});
+
+jQuery Effects
+--------------
+hide(), show() and toggle()
+- - - - - - - - - - - - - -
 
 
 

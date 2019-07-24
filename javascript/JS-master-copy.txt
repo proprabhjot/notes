@@ -1025,6 +1025,10 @@ window.onunload = function() {
 
 Ex: win-events.html
 
+Along with load and unload we have resize and scroll events also.
+
+We have 'submit' event on form element. Also, focus, blur, change etc... events on form elements.
+
 Event Propagation and Prevent default:
 ======================================
 Examples: event-propagation.html
