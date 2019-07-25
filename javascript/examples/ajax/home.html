@@ -29,6 +29,7 @@
                 todos.forEach(function(todo){
                     todosHtml = todosHtml + '<li>'+todo.title+'</li>';
                 });
+                console.log(todosHtml);
                 document.getElementById("todos-list").innerHTML = todosHtml;
             }, function() {
                 document.getElementById("failure-message").innerHTML = 'Failed to load todos';
