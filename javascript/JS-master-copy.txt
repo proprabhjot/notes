@@ -533,6 +533,7 @@ Objects:
 var user = new Object();
 var user = { };
 user.name = 'John'
+user.age = 25;
 delete user.name
 
 We can also use [] to access properties of object.
