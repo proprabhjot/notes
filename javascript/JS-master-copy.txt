@@ -686,7 +686,7 @@ Using call and apply methods we can call the function. Using bind() method we ca
 // Not binding any context and assigning print to printName variable
 var printName = print; 
 
-// Binding john to print and assigning print to printName variable
+// Binding user object to print function and assigning print to printName variable
 var printName = print.bind(user); 
 printName(2, 3); // John Smith
 
