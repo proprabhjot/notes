@@ -6,7 +6,7 @@
         <script src="./js/jquery-3.4.1.js"></script>
         <style>
             div {
-                padding: 20px;
+                padding: 10px;
                 margin-bottom: 15px;
                 border: 1px solid #000000;
             }
@@ -15,5 +15,76 @@
     <body>
         <h3><a href="./index.html">&lt;&lt; Back To Home</a></h3>
 
+        <!-- text() -->
+        <h3>text()</h3>
+        <div id="demo-div1"><p>Some random text to demo text() method</p></div>
+        <button id="read-text-btn1">Read text</button>
+        <button id="update-text-btn1">Update text</button>
+        <script>
+            $(document).ready(function(){
+                $("#read-text-btn1").click(function(){
+                    var text = $("#demo-div1").text();
+                    console.log(text);
+                });
+
+                $("#update-text-btn1").click(function(){
+                    $("#demo-div1").text("Changed to other text");
+                });
+            });
+        </script>
+
+        <!-- html() -->
+        <h3>html()</h3>
+        <div id="demo-div2"><p>Some random text to demo html() method</p></div>
+        <button id="read-text-btn2">Read html</button>
+        <button id="update-text-btn2">Update html</button>
+        <script>
+            $(document).ready(function(){
+                $("#read-text-btn2").click(function(){
+                    var html = $("#demo-div2").html();
+                    console.log(html);
+                });
+
+                $("#update-text-btn2").click(function(){
+                    $("#demo-div2").html("<h1>Some heading content</h1>");
+                });
+            });
+        </script>
+
+        <!-- val() -->
+        <h3>val()</h3>
+        <input type="text" id="val-demo-1" value="Some value" /> <br><br>
+        <button id="read-input">Read input</button>
+        <button id="update-input">Update input</button>
+        <script>
+            $(document).ready(function(){
+                $("#read-input").click(function(){
+                    var inputVal = $("#val-demo-1").val();
+                    console.log(inputVal);
+                });
+
+                $("#update-input").click(function(){
+                    $("#val-demo-1").val("Some other value.....!");
+                });
+            });
+        </script>
+
+        <!-- attr() -->
+        <h3>attr()</h3>
+        <a href="https://www.google.com/" id="link-demo">Some Link</a> <br><br>
+        <button id="read-href">Read href</button>
+        <button id="update-href">Update href</button>
+        <script>
+            $(document).ready(function(){
+                $("#read-href").click(function(){
+                    var hrefAttr = $("#link-demo").attr('href');
+                    console.log(hrefAttr);
+                });
+
+                $("#update-href").click(function(){
+                    $("#link-demo").attr('href', "https://in.yahoo.com/");
+                });
+            });
+        </script>
     </body>
 </html>

@@ -185,6 +185,10 @@ $('#chaining-demo').slideUp(1000).slideDown(1000);
 
 HTML & CSS Manipulation Methods
 -------------------------------
+Using jQuery we can manipulate the HTML and CSS.
+
+Ex: html-css.html
+
 
 
 
