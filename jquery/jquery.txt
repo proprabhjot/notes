@@ -189,12 +189,61 @@ Using jQuery we can manipulate the HTML and CSS.
 
 Ex: html-css.html
 
+> text() - For manipulation of text
+$("#demo-div1").text(); // Returns the text
+$("#demo-div1").text("Changed to other text"); // Set the text
 
+> html() - For manipulation of html
+$("#demo-div2").html(); // Returns html
+$("#demo-div2").html("<h1>Some heading content</h1>"); // set html
 
+> val() - For manipulation of input values
+$("#val-demo-1").val(); // Returns input value
+$("#val-demo-1").val("Some other value.....!"); // Set value
 
+> attr() - For manipulation of attributes
+$("#link-demo").attr('href'); // Returns attribute
+$("#link-demo").attr('href', "https://in.yahoo.com/"); // Set attribute
 
+> remove() - Remove element from the DOM
+$("#remove-demo").remove();
 
+> empty() - Remove the content of the element
+$("#empty-demo").empty();
 
+> addClass() - Add class to element
+$("#addClass-demo").addClass("red-border");
 
-jQuery plugins
-jQuery ui
+> removeClass() - Remove class of element
+$("#removeClass-demo").removeClass("red-border");
+
+> toggleClass() - Add/Remove class of element
+$("#toggleClass-demo").toggleClass("red-border");
+
+> css() - To add/remove css properties
+$("#css-demo").css("background-color", 'yellow'); // Add single property
+$("#css-demo").css({
+    "background-color": 'yellow',
+    "font-size": '30px'
+}); // Add multiple properties
+var backgroundValue = $("#css-demo").css("background-color"); // Returns property value
+
+> Dimension methods
+Below are methods get the values.
+var width = $("#dimensions-demo").width();
+var height = $("#dimensions-demo").height();
+var innerWidth = $("#dimensions-demo").innerWidth();
+var innerHeight = $("#dimensions-demo").innerHeight();
+var outerWidth = $("#dimensions-demo").outerWidth();
+var outerHeight = $("#dimensions-demo").outerHeight();
+
+// Set width and height
+$("#dimensions-demo").width(500);
+$("#dimensions-demo").height(100);
+
+Element Traversing Methods
+--------------------------
+Travese means travel across and reach an element in the DOM, based on it's relation with some other element.
+
+Ex: traversing.html
+
