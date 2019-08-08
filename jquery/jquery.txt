@@ -338,6 +338,21 @@ $.post("https://todos-api-dev.herokuapp.com/todos", {title: 'test todo'}, functi
     console.log(status);
 });
 
+// ajax method
+$.ajax({
+    url: 'https://todos-api-dev.herokuapp.com/todosss',
+    type: 'GET',
+    success: function(data){ 
+        console.log(data);
+    },
+    error: function(error) {
+        console.log('Got some error', error);
+    },
+    complete: function() {
+        console.log('Completed');
+    }
+});
+
 Check jquery-todos-app for more examples. https://github.com/angular-online/jquery-todos-app
 
 jQuery - noConflict() Method
