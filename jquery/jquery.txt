@@ -247,3 +247,118 @@ Travese means travel across and reach an element in the DOM, based on it's relat
 
 Ex: traversing.html
 
+> parent() - Select parent of the element
+$('#parent-demo-3').click(function() {
+    $(this).parent().addClass('red-border');
+});
+
+> parents() - selects all the parents of the element
+$('#parents-demo-3').click(function() {
+    $(this).parents().addClass('red-border');
+});
+
+> parentsUntil() - selects all the elements until it finds the specified element in the hierarchy
+$('#parentsUntil-demo-3').click(function() {
+    $(this).parentsUntil('div#parentsUntil-demo-2').addClass('red-border');
+});
+
+> children() - selects all the immediate children of the element
+$('#children-demo-1').click(function() {
+    $(this).children().addClass('red-border');
+});
+
+> find() - Find the specified element
+$('#find-demo-1').click(function() {
+    $(this).find('span').addClass('red-border');
+});
+
+> siblings() - selects all the siblings
+$('#sibling3').click(function() {
+    $(this).siblings().addClass('red-border');
+});
+
+> next() - select only the immediate sibling element
+$('#sibling8').click(function() {
+    $(this).next().addClass('red-border');
+});
+
+> nextAll() - select all the next siblings
+$('#next-all-btn').click(function() {
+    $('#sibling8').nextAll().addClass('red-border');
+});
+
+> nextUntil() - select all the next siblings until it find the specified element
+$('#next-until-btn').click(function() {
+    $('#sibling8').nextUntil('div#sibling11').addClass('red-border');
+});
+
+> prev() - select the immediate previous sibling
+$('#sibling19').click(function() {
+    $(this).prev().addClass('red-border');
+});
+
+> prevAll() - select all the previous siblings
+$('#prev-all-btn').click(function() {
+    $('#sibling19').prevAll().addClass('red-border');
+});
+
+> prevUntil() - select all the previous siblings until it finds the specified element
+$('#prev-until-btn').click(function() {
+    $('#sibling19').prevUntil('div#sibling16').addClass('red-border');
+});
+
+> first() - select the first element of specified kind
+$("div").first().addClass('red-border');
+
+> last() - select the last element of specified kind
+$("div").last().addClass('red-border');
+
+> eq(n) - select the nth element. Index starts from 0
+$("div").eq(2).addClass('red-border');
+
+> filter() - select the elements and filter out some elements from the list
+$("div").filter("#siblings-parent").addClass('red-border');
+
+> not() - Exclude the elements with specified criteria
+$("div").not("#siblings-parent").addClass('red-border');
+
+AJAX in jQuery
+--------------
+We can do AJAX calls/Http requests to the server using jQuery get and post methods.
+
+// GET request
+$.get("https://todos-api-dev.herokuapp.com/todos", function(data, status){
+    console.log(data);
+    console.log(status);
+});
+
+// POST request
+$.post("https://todos-api-dev.herokuapp.com/todos", {title: 'test todo'}, function(data, status){
+    console.log(data);
+    console.log(status);
+});
+
+Check jquery-todos-app for more examples. https://github.com/angular-online/jquery-todos-app
+
+jQuery - noConflict() Method
+----------------------------
+If some other library also using the '$' symbol in your application then using noConflict() method we can prevent the name clash between the libraries.
+
+Ex: no-conflict.html
+
+// We can use 'jQuery' instead of '$'
+jQuery(document).ready(function(){
+    console.log('Page ready...!');
+});
+
+// We can replace '$' with some other word.
+var jq = $.noConflict();
+jq(document).ready(function(){
+    console.log('Page ready...!');
+});
+
+$.noConflict(); // We can release '$' by calling $.noConflict() method.
+we can't use '$' after releasing it. The below code generate error.
+$(document).ready(function(){
+    console.log('Page ready...!');
+});

@@ -181,8 +181,41 @@
             });
         </script>
 
-        
+        <!-- first(), last(), eq(), filter() and not() -->
+        <h3>first(), last(), eq(), filter() and not()</h3>
+        <button id="first-demo-btn">Check First Div in Page</button>
+        <button id="last-demo-btn">Check Last Div in Page</button>
+        <button id="eq-demo-btn">Check 3rd Div in Page</button>
+        <button id="filter-demo-btn">Filter some Div in Page</button>
+        <button id="not-demo-btn">Exclude some Div in Page</button>
+        <script>
+            $(document).ready(function() {
+                $("#first-demo-btn").click(function() {
+                    $("div").first().addClass('red-border');
+                });
 
+                $("#last-demo-btn").click(function() {
+                    $("div").last().addClass('red-border');
+                });
+
+                $("#eq-demo-btn").click(function() {
+                    $("div").eq(2).addClass('red-border'); // Select the 3rd div element in the page. Index starts from 0.
+                });
+
+                $("#filter-demo-btn").click(function() {
+                    $("div").filter("#siblings-parent").addClass('red-border');
+                });
+
+                $("#filter-demo-btn").click(function() {
+                    $("div").filter("#siblings-parent").addClass('red-border');
+                });
+
+                $("#not-demo-btn").click(function() {
+                    $("div").not("#siblings-parent").addClass('red-border');
+                });
+            });    
+        </script>
+        
         <br><br><br><br><br><br><br>
     </body>
 </html>
